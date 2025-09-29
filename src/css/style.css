@@ -1,0 +1,96 @@
+:root {
+  --font-family-v1: "Source Code Pro", monospace;
+  --font-family-v2: "Roboto", sans-serif;
+  --font-family-basic: "Montserrat", sans-serif;
+  --dark-theme-background: #242424;
+  --text-color: #111;
+  --default-theme-background: #fff;
+}
+/* header */
+.header {
+  padding-bottom: 88px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+  @media (max-width: 479px) {
+  .header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.header-list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+  @media (max-width: 479px) {
+  .header-list { 
+    display: flex;
+    align-items: center;
+    gap: 10px;  
+  }
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.header-list li{
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.5s ease;
+}
+.header-list li:hover {
+  color: rgb(199, 199, 199);
+}
+
+.s-span {
+  color: black;
+  font-size: large;
+  font-weight: 700;
+}
+
+/* theme animation */
+
+body {
+  background: var(--default-theme-background);
+  font-family: var(--font-family-basic);
+  color: #111;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  background: var(--dark-theme-background);
+  color: #f3f4f6;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+
+  outline: none;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-toggle.rotate {
+  transform: rotate(135deg);
+}
+
+.slide {
+  width: 100px;
+  height: auto;
+  outline: 2px solid khaki;
+}
+
+/* main */
+
+
