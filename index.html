@@ -20,25 +20,29 @@
   <body>
     <header class="header">
       <div class="container">
-      <nav class="header-nav">
-        <a href="./index.html" class="header-logo-link"><img src="./dmark_favicon.svg" alt="logo"></a>
-        <ul class="header-list">
-          <li class="header-list-item cursor">
-            home
-          </li>
-          <li class="header-list-item">
-            |
-          </li>
-          <li class="header-list-item cursor">
-            bookmark<span class="s-span">S</span>
-          </li>
-        </ul>
-        <div class="header-theme">
-          <button id="theme-toggle" class="theme-toggle" aria-label="Переключить тему">
-            <span class="icon"><img src="./src/images/sun.svg" alt=""></span>
-          </button>
-        </div>
-      </nav>        
+        <nav class="header-nav">
+          <a href="./index.html" class="header-logo-link"
+            ><img src="./dmark_favicon.svg" alt="logo"
+          /></a>
+          <ul class="header-list">
+            <li class="header-list-item cursor">home</li>
+            <li class="header-list-item">|</li>
+            <li class="header-list-item cursor">
+              bookmark<span class="s-span">S</span>
+            </li>
+          </ul>
+          <div class="header-theme">
+            <button
+              id="theme-toggle"
+              class="theme-toggle"
+              aria-label="Переключить тему"
+            >
+              <span class="icon"
+                ><img src="./src/images/sun.svg" alt=""
+              /></span>
+            </button>
+          </div>
+        </nav>
       </div>
     </header>
     <main class="main">
@@ -46,8 +50,38 @@
         <div class="container">
           <div class="slider-container">
             <div class="slide">
-              <p>folder</p>
+              <div class="folder-card">
+                <div class="folder-header">
+                  <img
+                    src="./src/images/folder.svg"
+                    alt="folder icon"
+                    class="folder-icon"
+                  />
+                  <span class="folder-name">Work</span>
+                </div>
+                <div class="folder-preview">
+                  <a href="">Google Docs</a>
+                  <a href="">GitHub Repo</a>
+                </div>
+              </div>
             </div>
+            <div class="slide">
+              <div class="folder-card">
+                <div class="folder-header">
+                  <img
+                    src="./src/images/folder.svg"
+                    alt="folder icon"
+                    class="folder-icon"
+                  />
+                  <span class="folder-name">Personal</span>
+                </div>
+                <div class="folder-preview">
+                  <a href="">YouTube</a>
+                  <a href="">Spotify</a>
+                </div>
+              </div>
+            </div>
+            <!-- еще папки -->
           </div>
         </div>
       </section>

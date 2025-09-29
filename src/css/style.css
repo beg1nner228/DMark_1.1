@@ -93,4 +93,64 @@ body.dark {
 
 /* main */
 
+.slider-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 20px;
+}
 
+.slide {
+  min-width: 220px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+.folder-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.folder-card:hover {
+  transform: translateY(-4px);
+}
+
+.folder-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.folder-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.folder-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.folder-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.folder-preview a {
+  font-size: 0.9rem;
+  color: #0077ff;
+  text-decoration: none;
+}
+
+.folder-preview a:hover {
+  text-decoration: underline;
+}
