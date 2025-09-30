@@ -28,7 +28,7 @@
             <li class="header-list-item cursor">home</li>
             <li class="header-list-item">|</li>
             <li class="header-list-item cursor">
-              bookmark<span class="s-span">S</span>
+             <a href="./bookmark.html">bookmark<span class="s-span">S</span></a>
             </li>
           </ul>
           <div class="header-theme">
@@ -48,44 +48,91 @@
     <main class="main">
       <section>
         <div class="container">
-          <div class="slider-container">
-            <div class="slide">
-              <div class="folder-card">
-                <div class="folder-header">
-                  <img
-                    src="./src/images/folder.svg"
-                    alt="folder icon"
-                    class="folder-icon"
-                  />
-                  <span class="folder-name">Work</span>
+          <div class="slider-flex-elements">
+            <button class="prev slider-btn" data-value="prev">‹</button>
+
+            <div class="slider-wrapper">
+              <div class="slider-container sliderJS">
+                <div class="slide">
+                  <div class="folder-card">
+                    <div class="folder-header">
+                      <img
+                        src="./src/images/folder.svg"
+                        alt="folder icon"
+                        class="folder-icon"
+                      />
+                      <span class="folder-name">Example</span>
+                    </div>
+                    <div class="folder-preview">
+                      <a href="">Google Docs</a>
+                      <a href="">GitHub Repo</a>
+                    </div>
+                  </div>
                 </div>
-                <div class="folder-preview">
-                  <a href="">Google Docs</a>
-                  <a href="">GitHub Repo</a>
+
+                <div class="slide">
+                  <div class="folder-card">
+                    <div class="folder-header">
+                      <img
+                        src="./src/images/folder.svg"
+                        alt="folder icon"
+                        class="folder-icon"
+                      />
+                      <span class="folder-name">Personal</span>
+                    </div>
+                    <div class="folder-preview">
+                      <a href="">YouTube</a>
+                      <a href="">Spotify</a>
+                    </div>
+                  </div>
                 </div>
+
+                <div class="slide">
+                  <div class="folder-card">
+                    <div class="folder-header">
+                      <img
+                        src="./src/images/folder.svg"
+                        alt="folder icon"
+                        class="folder-icon"
+                      />
+                      <span class="folder-name">Personal</span>
+                    </div>
+                    <div class="folder-preview">
+                      <a href="">YouTube</a>
+                      <a href="">Spotify</a>
+                    </div>
+                  </div>
+                </div>                
+
+                                <div class="slide">
+                  <div class="folder-card">
+                    <div class="folder-header">
+                      <img
+                        src="./src/images/folder.svg"
+                        alt="folder icon"
+                        class="folder-icon"
+                      />
+                      <span class="folder-name">Personal</span>
+                    </div>
+                    <div class="folder-preview">
+                      <a href="">YouTube</a>
+                      <a href="">Spotify</a>
+                    </div>
+                  </div>
+                </div>    
+                <!-- ещё слайды... -->
               </div>
             </div>
-            <div class="slide">
-              <div class="folder-card">
-                <div class="folder-header">
-                  <img
-                    src="./src/images/folder.svg"
-                    alt="folder icon"
-                    class="folder-icon"
-                  />
-                  <span class="folder-name">Personal</span>
-                </div>
-                <div class="folder-preview">
-                  <a href="">YouTube</a>
-                  <a href="">Spotify</a>
-                </div>
-              </div>
-            </div>
-            <!-- еще папки -->
+
+            <button class="next slider-btn" data-value="next">›</button>
           </div>
         </div>
       </section>
     </main>
-    <script type="module" src="/src/main.js"></script>
+    <footer>
+
+    </footer>
+    
+    <script type="module" src="./src/main.js"></script>
   </body>
 </html>

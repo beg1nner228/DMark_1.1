@@ -1,0 +1,230 @@
+.bookmarks {
+  padding-bottom: 100px;
+}
+.dashbord {
+  padding: 40px;
+  border: 3px solid black;
+  border-radius: 25px;
+  width: 100%;
+  height: 50vw;
+  background-color: white;
+}
+.bookmark-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.position {
+  position: relative;
+}
+.addNewFolder {
+  color: rgb(0, 0, 0);
+  position: absolute;
+  font-weight: 500;
+  font-size: 40px;
+
+  /* ИСПРАВЛЕНИЕ: Смещаем кнопку на величину padding родителя */
+  left: 0px;
+  top: 0px;
+  outline: none;
+  border: none;
+}
+/* MODAL */
+
+body.show-modal .modal {
+  transform: scale(1);
+}
+
+.backdrop {
+  display: none;                /* по умолчанию — скрыто */
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+}
+
+body.show-modal .backdrop {
+  display: flex;                /* при открытии — центрируется */
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+
+
+.modal {
+  padding: 24px;
+  position: relative;
+  border-radius: 4px;
+  max-width: 640px;
+  width: 100%;
+  min-height: 320px;
+  background-color: #fff;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+
+  transform: scale(1.1);
+  transition: transform 200ms ease-in-out;
+}
+.closeBtn {
+  font-weight: 500;
+  font-size: 28px;
+  color: #ffffff;
+  position: absolute;
+  top: 0;
+  right: 6px;
+
+  border: none;
+  outline: none;
+}
+/* modal form styles */
+
+/* Улучшаем внешний вид заголовка модалки */
+.modal-title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111; /* Цвет текста для светлой модалки */
+}
+
+/* Стили для формы */
+.new-folder-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Отступ между группами полей */
+}
+
+/* Общий контейнер для метки и поля ввода */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Стилизация меток (labels) */
+.new-folder-form label {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* Стилизация полей ввода (input) */
+.new-folder-form input[type="text"],
+.new-folder-form input[type="url"] {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Фокус на полях ввода */
+.new-folder-form input[type="text"]:focus,
+.new-folder-form input[type="url"]:focus {
+    border-color: #0077ff; /* Синий акцент */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.2);
+}
+
+/* Стилизация кнопки подтверждения */
+.submit-btn {
+    margin-top: 15px;
+    padding: 12px 25px;
+    background-color: #0077ff; /* Основной цвет */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover {
+    background-color: #005bb5;
+}
+
+.submit-btn:active {
+    transform: translateY(1px); /* Эффект нажатия */
+}
+
+/* Стилизация кнопки закрытия 'x' */
+.closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    line-height: 1; /* Чтобы крестик не растягивался */
+    padding: 5px;
+}
+
+/* Корректировка модалки для темной темы (если она активна) */
+body.dark .modal {
+    background-color: var(--dark-theme-background); /* Цвет фона из вашей переменной */
+    color: #f3f4f6; /* Светлый текст */
+}
+
+body.dark .modal-title,
+body.dark .new-folder-form label {
+    color: #f3f4f6;
+}
+
+body.dark .new-folder-form input {
+    background-color: #333;
+    border-color: #555;
+    color: #f3f4f6;
+}
+
+body.dark .new-folder-form input:focus {
+    border-color: #00aaff;
+    box-shadow: 0 0 0 2px rgba(0, 170, 255, 0.3);
+}
+
+.dash_slide {
+    overflow: scroll;
+    max-height: 100px;
+}
+.resetBtn {
+  outline: none;
+  border: none;
+}
+
+.resetImg {
+  position: absolute;
+  top: 12px;
+  right: 8px;
+
+  width: 36px;
+  height: 28px;
+  transition: transform 1s ease;
+}
+
+.reset_animation {
+  transform: rotate(-360deg);
+  transition: transform 1s ease;
+}
+.createBookmarkTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #241919;
+}
+.unvisible {
+  opacity: 0;
+}

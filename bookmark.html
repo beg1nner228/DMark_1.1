@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./public/dmark_favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/dmark_favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DashMark</title>
     <link
@@ -18,7 +18,106 @@
     />
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <header class="header">
+      <div class="container">
+        <nav class="header-nav">
+          <a href="./index.html" class="header-logo-link"
+            ><img src="./dmark_favicon.svg" alt="logo"
+          /></a>
+          <ul class="header-list">
+            <li class="header-list-item cursor">
+              <a href="./index.html">home</a>
+            </li>
+            <li class="header-list-item">|</li>
+            <li class="header-list-item cursor">
+              bookmark<span class="s-span">S</span>
+            </li>
+          </ul>
+          <div class="header-theme">
+            <button
+              id="theme-toggle"
+              class="theme-toggle"
+              aria-label="Переключить тему"
+            >
+              <span class="icon"
+                ><img src="./src/images/sun.svg" alt=""
+              /></span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="bookmarks">
+        <div class="container">
+          <div class="dashbord position">
+            <!-- Если папок или закладак в них много, то попробовать overflow: scroll; -->
+            <button class="addNewFolder" data-action="open-modal">+</button>
+            <button class="resetBtn reset-bookmarksBtnJS">
+              <img src="./src/images/reset.svg" alt="reset" class="resetImg">
+            </button>
+            <h2 class="createBookmarkTitle BookmarkTitleJS">Create your first bookmark...</h2>
+            <ul class="bookmark-list"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <div class="backdrop js-backdrop">
+      <div class="modal">
+        <button type="button" class="closeBtn" data-action="close-modal">
+          &times;
+        </button>
+
+        <h2 class="modal-title">Добавить новую папку / ссылку</h2>
+
+        <form class="new-folder-form">
+          <div class="form-group">
+            <label for="folderName">Имя папки (или существующая):</label>
+            <input
+              type="text"
+              id="folderName"
+              name="folderName"
+              required
+              placeholder="Например, 'Работа'"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="bookmarkURL">URL Ссылки:</label>
+            <input
+              type="url"
+              id="bookmarkURL"
+              name="bookmarkURL"
+              required
+              placeholder="Например, https://www.youtube.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="bookmarkTitle">Заголовок Ссылки:</label>
+            <input
+              type="text"
+              id="bookmarkTitle"
+              name="bookmarkTitle"
+              placeholder="Например, 'YouTube'"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="folderIcon">Значок (необязательно):</label>
+            <input
+              type="file"
+              id="folderIcon"
+              name="folderIcon"
+              accept="image/*"
+            />
+          </div>
+
+          <button type="submit" class="submit-btn">Подтвердить</button>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="./src/bookmarks-modal2.js"></script>
   </body>
 </html>

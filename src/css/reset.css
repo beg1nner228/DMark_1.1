@@ -54,6 +54,8 @@ button {
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
+  border: none;
+  outline: none;
 }
 
 input[type="number"]::-webkit-outer-spin-button,

@@ -2,7 +2,7 @@
   --font-family-v1: "Source Code Pro", monospace;
   --font-family-v2: "Roboto", sans-serif;
   --font-family-basic: "Montserrat", sans-serif;
-  --dark-theme-background: #242424;
+  --dark-theme-background: rgb(36, 36, 36);
   --text-color: #111;
   --default-theme-background: #fff;
 }
@@ -71,10 +71,8 @@ body.dark {
 
 .theme-toggle {
   background: transparent;
-  border: none;
   font-size: 2rem;
   cursor: pointer;
-  transition: transform 0.5s ease;
 
   outline: none;
   border: none;
@@ -85,27 +83,7 @@ body.dark {
   transform: rotate(135deg);
 }
 
-.slide {
-  width: 100px;
-  height: auto;
-  outline: 2px solid khaki;
-}
-
 /* main */
-
-.slider-container {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 20px;
-}
-
-.slide {
-  min-width: 220px;
-  flex-shrink: 0;
-  scroll-snap-align: start;
-}
 
 .folder-card {
   background: #fff;
@@ -137,6 +115,7 @@ body.dark {
 .folder-name {
   font-weight: 600;
   font-size: 1.1rem;
+  color: #000;
 }
 
 .folder-preview {
@@ -154,3 +133,45 @@ body.dark {
 .folder-preview a:hover {
   text-decoration: underline;
 }
+/* slider */
+
+.slider-container {
+    display: flex;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    padding: 20px;
+    transition: transform 0.4s ease;
+}
+
+
+.slide {
+  max-width: 280px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  flex: 0 0 calc((100% - 40px) / 3); /* ровно 3 карточки на экране */
+  box-sizing: border-box;
+}
+
+.slider-flex-elements {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.slider-btn {
+  font-weight: 500;
+  font-size: 40px;
+}
+.slider-wrapper {
+  overflow-x: hidden; 
+  flex: 1;
+}
+.slide.empty {
+  background: transparent;
+  box-shadow: none;
+  pointer-events: none;
+}
+/* slide modals */
+
+
+
+
