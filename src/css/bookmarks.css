@@ -1,3 +1,6 @@
+body {
+  font-family: var(--font-firstMark);
+}
 .bookmarks {
   padding-bottom: 100px;
 }
@@ -219,6 +222,8 @@ body.dark .new-folder-form input:focus {
   transition: transform 1s ease;
 }
 .createBookmarkTitle {
+  font-family: var(--font-firstMark);
+
   position: absolute;
   top: 50%;
   left: 50%;

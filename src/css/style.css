@@ -5,6 +5,7 @@
   --dark-theme-background: rgb(36, 36, 36);
   --text-color: #111;
   --default-theme-background: #fff;
+  --font-firstMark: "Chewy", system-ui;;
 }
 /* header */
 .header {
