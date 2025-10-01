@@ -2,7 +2,7 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  outline: 2px dashed violet;
+  /* outline: 2px dashed violet; */
   padding-left: 1rem;  /* 16px */
   padding-right: 1rem;
 }

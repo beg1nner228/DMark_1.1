@@ -12,8 +12,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
   </head>
   <body>
     <header class="header">
@@ -23,12 +23,12 @@
             ><img src="./dmark_favicon.svg" alt="logo"
           /></a>
           <ul class="header-list">
-            <li class="header-list-item cursor">
-              <a href="./index.html">home</a>
-            </li>
+            <li class="header-list-item cursor" ><a href="./index.html" data-i18n="nav.home">home</a></li>
             <li class="header-list-item">|</li>
             <li class="header-list-item cursor">
-              bookmark<span class="s-span">S</span>
+              <a href="./bookmark.html"
+                 data-i18n="nav.bookmarks" >bookmark<span class="s-span">S</span></a
+              >
             </li>
           </ul>
           <div class="header-theme">
@@ -38,8 +38,22 @@
               aria-label="Переключить тему"
             >
               <span class="icon"
-                ><img src="./src/images/sun.svg" alt=""
+                ><img src="./src/images/sun.svg" alt="sun"
               /></span>
+            </button>
+          </div>
+          <div class="chooseLanguage chooseLanguageJS">
+            <button class="lang-switch-btn english_langJS" data-lang="en">
+              <img
+                src="./src/images/english_lang.svg"
+                alt="English Language Flag"
+              />
+            </button>
+            <button class="lang-switch-btn ukrainian_langJS" data-lang="uk">
+              <img
+                src="./src/images/ukrainian_lang.svg"
+                alt="Ukrainian Language Flag"
+              />
             </button>
           </div>
         </nav>
@@ -67,43 +81,45 @@
           &times;
         </button>
 
-        <h2 class="modal-title">Добавить новую папку / ссылку</h2>
+        <h2 class="modal-title" data-i18n="form.title">Добавить новую папку / ссылку</h2>
 
         <form class="new-folder-form">
           <div class="form-group">
-            <label for="folderName">Имя папки (или существующая):</label>
+            <label for="folderName" data-i18n="form.name">Имя папки (или существующая):</label>
             <input
               type="text"
               id="folderName"
               name="folderName"
               required
               placeholder="Например, 'Работа'"
+              data-i18n-placeholder="input.folder_name"
             />
           </div>
 
           <div class="form-group">
-            <label for="bookmarkURL">URL Ссылки:</label>
+            <label for="bookmarkURL" data-i18n="form.url">URL Ссылки:</label>
             <input
               type="url"
               id="bookmarkURL"
               name="bookmarkURL"
               required
-              placeholder="Например, https://www.youtube.com"
+              placeholder="https://www.youtube.com"
             />
           </div>
 
           <div class="form-group">
-            <label for="bookmarkTitle">Заголовок Ссылки:</label>
+            <label for="bookmarkTitle" data-i18n="form.linkTitle">Заголовок Ссылки:</label>
             <input
               type="text"
               id="bookmarkTitle"
               name="bookmarkTitle"
-              placeholder="Например, 'YouTube'"
+              data-i18n-placeholder="input.folder_name"
+              placeholder="'YouTube'"
             />
           </div>
 
           <div class="form-group">
-            <label for="folderIcon">Значок (необязательно):</label>
+            <label for="folderIcon" data-i18n="form.icon">Значок (необязательно):</label>
             <input
               type="file"
               id="folderIcon"
@@ -112,10 +128,10 @@
             />
           </div>
 
-          <button type="submit" class="submit-btn">Подтвердить</button>
+          <button type="submit" class="submit-btn" data-i18n="form.accept">Подтвердить</button>
         </form>
       </div>
     </div>
-    <script type="module" src="./src/bookmarks-modal2.js"></script>
+    <script type="module" src="/src/bookmarks-modal2.js"></script>
   </body>
 </html>

@@ -12,8 +12,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chewy&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="header">
@@ -23,11 +29,11 @@
             ><img src="./dmark_favicon.svg" alt="logo"
           /></a>
           <ul class="header-list">
-            <li class="header-list-item cursor">home</li>
+            <li class="header-list-item cursor" data-i18n="nav.home">home</li>
             <li class="header-list-item">|</li>
             <li class="header-list-item cursor">
               <a href="./bookmark.html"
-                >bookmark<span class="s-span">S</span></a
+                 data-i18n="nav.bookmarks" >bookmark<span class="s-span">S</span></a
               >
             </li>
           </ul>
@@ -38,8 +44,22 @@
               aria-label="Переключить тему"
             >
               <span class="icon"
-                ><img src="./src/images/sun.svg" alt=""
+                ><img src="./src/images/sun.svg" alt="sun"
               /></span>
+            </button>
+          </div>
+          <div class="chooseLanguage chooseLanguageJS">
+            <button class="lang-switch-btn english_langJS" data-lang="en">
+              <img
+                src="./src/images/english_lang.svg"
+                alt="English Language Flag"
+              />
+            </button>
+            <button class="lang-switch-btn ukrainian_langJS" data-lang="uk">
+              <img
+                src="./src/images/ukrainian_lang.svg"
+                alt="Ukrainian Language Flag"
+              />
             </button>
           </div>
         </nav>
@@ -78,7 +98,7 @@
                         alt="folder icon"
                         class="folder-icon"
                       />
-                      <span class="folder-name">Personal</span>
+                      <span class="folder-name">Example</span>
                     </div>
                     <div class="folder-preview">
                       <a href="">YouTube</a>
@@ -95,7 +115,7 @@
                         alt="folder icon"
                         class="folder-icon"
                       />
-                      <span class="folder-name">Personal</span>
+                      <span class="folder-name">Example</span>
                     </div>
                     <div class="folder-preview">
                       <a href="">YouTube</a>
@@ -112,7 +132,7 @@
                         alt="folder icon"
                         class="folder-icon"
                       />
-                      <span class="folder-name">Personal</span>
+                      <span class="folder-name">Example</span>
                     </div>
                     <div class="folder-preview">
                       <a href="">YouTube</a>
@@ -123,13 +143,72 @@
                 <!-- ещё слайды... -->
               </div>
             </div>
-
             <button class="next slider-btn" data-value="next">›</button>
           </div>
         </div>
       </section>
     </main>
-    <footer></footer>
-    <script type="module" src="./src/main.js"></script>
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-col footer-info">
+          <a class="footer-brand"
+            ><img src="dmark_favicon.svg" alt="logo" class="logo"
+          /></a>
+          <p class="footer-version">v1.0.0</p>
+          <p class="footer-copyright" data-i18n="footer.privacy">&copy; 2024. Все права защищены.</p> <!--  -->
+        </div>
+
+        <div class="footer-col footer-links">
+          <h4 data-i18n="footer.information">Информация</h4>
+          <ul>
+            <li><a href="#" data-i18n="footer.project">О проекте</a></li>
+            <li><a href="#" data-i18n="footer.help">Помощь / FAQ</a></li>
+            <li><a href="#" data-i18n="footer.contact">Связаться</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-legal">
+          <h4 data-i18n="footer.command">Управление</h4>
+          <ul>
+            <li><a href="#" data-i18n="footer.policy">Политика конфиденциальности</a></li>
+            <li><a href="#" data-i18n="footer.conditionals">Условия использования</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-social">
+          <h4 data-i18n="footer.follow">Следите за нами</h4>
+          <div class="social-icons">
+            <a
+              href="https://github.com/your-repo"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <img
+                src="./src/images/github.svg"
+                alt="GitHub"
+                class="social-icon"
+              />
+            </a>
+            <a href="#" target="_blank" aria-label="Twitter/X">
+              <img
+                src="./src/images/twitter.svg"
+                alt="Twitter/X"
+                class="social-icon"
+              />
+            </a>
+            <a href="#" target="_blank" aria-label="LinkedIn">
+              <img
+                src="./src/images/linkedin.svg"
+                alt="LinkedIn"
+                class="social-icon"
+              />
+            </a>
+          </div>
+
+          <p class="footer-creator" data-i18n="footer.creator">Создатель @Blazequiz</p>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
