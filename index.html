@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/dmark_favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DashMark</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chewy&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/assets/index-BvNRuVks.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DwCGbTgS.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="header-nav">
+          <a href="./index.html" class="header-logo-link"
+            ><img src="./dmark_favicon.svg" alt="logo"
+          /></a>
+          <ul class="header-list">
+            <li class="header-list-item cursor" data-i18n="nav.home">home</li>
+            <li class="header-list-item">|</li>
+            <li class="header-list-item cursor">
+              <a href="./bookmark.html"
+                 data-i18n="nav.bookmarks" >bookmark<span class="s-span">S</span></a
+              >
+            </li>
+          </ul>
+          <div class="header-theme">
+            <button
+              id="theme-toggle"
+              class="theme-toggle"
+              aria-label="Переключить тему"
+            >
+              <span class="icon"
+                ><img src="/assets/sun-CVRKd0Ic.svg" alt="sun"
+              /></span>
+            </button>
+          </div>
+          <div class="chooseLanguage chooseLanguageJS">
+            <button class="lang-switch-btn english_langJS" data-lang="en">
+              <img
+                src="/assets/english_lang-B7pUP4CU.svg"
+                alt="English Language Flag"
+              />
+            </button>
+            <button class="lang-switch-btn ukrainian_langJS" data-lang="uk">
+              <img
+                src="/assets/ukrainian_lang-CyJEFy1W.svg"
+                alt="Ukrainian Language Flag"
+              />
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <section>
+        <div class="container">
+          <div class="slider-flex-elements">
+            <button class="prev slider-btn" data-value="prev">‹</button>
+
+            <div class="slider-wrapper">
+              <div class="slider-container sliderJS">
+                <div class="slide">
+                  <div class="folder-card">
+                    <div class="folder-header">
+                      <img
+                        src="/assets/folder-DkVzHKlo.svg"
+                        alt="folder icon"
+                        class="folder-icon"
+                      />
+                      <span class="folder-name">Example</span>
+                    </div>
+                    <div class="folder-preview">
+                      <a href="">Google Docs</a>
+                      <a href="">GitHub Repo</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="slide">
+                  <div class="folder-card">
+                    <div class="folder-header">
+                      <img
+                        src="/assets/folder-DkVzHKlo.svg"
+                        alt="folder icon"
+                        class="folder-icon"
+                      />
+                      <span class="folder-name">Example</span>
+                    </div>
+                    <div class="folder-preview">
+                      <a href="">YouTube</a>
+                      <a href="">Spotify</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="slide">
+                  <div class="folder-card">
+                    <div class="folder-header">
+                      <img
+                        src="/assets/folder-DkVzHKlo.svg"
+                        alt="folder icon"
+                        class="folder-icon"
+                      />
+                      <span class="folder-name">Example</span>
+                    </div>
+                    <div class="folder-preview">
+                      <a href="">YouTube</a>
+                      <a href="">Spotify</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="slide">
+                  <div class="folder-card">
+                    <div class="folder-header">
+                      <img
+                        src="/assets/folder-DkVzHKlo.svg"
+                        alt="folder icon"
+                        class="folder-icon"
+                      />
+                      <span class="folder-name">Example</span>
+                    </div>
+                    <div class="folder-preview">
+                      <a href="">YouTube</a>
+                      <a href="">Spotify</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- ещё слайды... -->
+              </div>
+            </div>
+            <button class="next slider-btn" data-value="next">›</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-col footer-info">
+          <a class="footer-brand"
+            ><img src="dmark_favicon.svg" alt="logo" class="logo"
+          /></a>
+          <p class="footer-version">v1.0.0</p>
+          <p class="footer-copyright" data-i18n="footer.privacy">&copy; 2024. Все права защищены.</p> <!--  -->
+        </div>
+
+        <div class="footer-col footer-links">
+          <h4 data-i18n="footer.information">Информация</h4>
+          <ul>
+            <li><a href="#" data-i18n="footer.project">О проекте</a></li>
+            <li><a href="#" data-i18n="footer.help">Помощь / FAQ</a></li>
+            <li><a href="#" data-i18n="footer.contact">Связаться</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-legal">
+          <h4 data-i18n="footer.command">Управление</h4>
+          <ul>
+            <li><a href="#" data-i18n="footer.policy">Политика конфиденциальности</a></li>
+            <li><a href="#" data-i18n="footer.conditionals">Условия использования</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-social">
+          <h4 data-i18n="footer.follow">Следите за нами</h4>
+          <div class="social-icons">
+            <a
+              href="https://github.com/your-repo"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <img
+                src="/assets/github-BCSRtdH7.svg"
+                alt="GitHub"
+                class="social-icon"
+              />
+            </a>
+            <a href="#" target="_blank" aria-label="Twitter/X">
+              <img
+                src="/assets/twitter-D4Y_HaiH.svg"
+                alt="Twitter/X"
+                class="social-icon"
+              />
+            </a>
+            <a href="#" target="_blank" aria-label="LinkedIn">
+              <img
+                src="/assets/linkedin-BhjZIvrR.svg"
+                alt="LinkedIn"
+                class="social-icon"
+              />
+            </a>
+          </div>
+
+          <p class="footer-creator" data-i18n="footer.creator">Создатель @Blazequiz</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
