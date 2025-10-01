@@ -1,4 +1,5 @@
 import { closeModal } from "./bookmarks/modals";
+import folderIMG from '../../images/folder.svg';
 
 document.addEventListener('DOMContentLoaded', () => {
   const createFolderForm = document.querySelector('.new-folder-form');
@@ -47,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <li class="slide dash_slide">
         <div class="folder-card">
           <div class="folder-header">
-            <img src="${folderData.icon || './src/images/folder.svg'}" alt="folder icon" class="folder-icon"/>
+            <img src="${folderData.icon || folderIMG}" alt="folder icon" class="folder-icon"/>
             <span class="folder-name">${escapeHtml(folderData.name)}</span>
           </div>
           <div class="folder-preview">
