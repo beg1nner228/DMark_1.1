@@ -1,3 +1,5 @@
+import { updateContent } from '../i18n.js'
+
 const openBtn = document.querySelector(".addNewFolder")
 console.log(openBtn)
 const closeBtn = document.querySelector(".closeBtn")
@@ -6,6 +8,7 @@ const backdrop = document.querySelector(".js-backdrop")
 const onOpenModal = (event) => {
   document.body.classList.add("show-modal")
   document.addEventListener("keydown", onEscapeCloseModal)
+  updateContent(); 
 }
 
 const onCloseModal = (event) => {
