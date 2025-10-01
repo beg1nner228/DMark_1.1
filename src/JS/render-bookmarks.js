@@ -1,5 +1,5 @@
 import { closeModal } from "./bookmarks/modals";
-import folderIMG from '../../images/folder.svg';
+import folderIMG from '../images/folder.svg';
 
 document.addEventListener('DOMContentLoaded', () => {
   const createFolderForm = document.querySelector('.new-folder-form');
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // If a file was chosen and has size > 0, convert to base64
-    let iconData = './src/images/folder.svg';
+    let iconData = folderIMG;
     if (folderIconFile && folderIconFile instanceof File && folderIconFile.size > 0) {
       try {
         iconData = await fileToDataURL(folderIconFile);
