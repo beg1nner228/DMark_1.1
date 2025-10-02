@@ -4,77 +4,119 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/dmark_favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DashMark</title>
+    <title>DMark - All Bookmarks</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
-      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDBQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-<link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="container">
-        <nav class="header-nav">
-          <a href="./index.html" class="header-logo-link"
-            ><img src="./dmark_favicon.svg" alt="logo"
-          /></a>
-          <ul class="header-list">
-            <li class="header-list-item cursor" ><a href="./index.html" data-i18n="nav.home">home</a></li>
-            <li class="header-list-item">|</li>
-            <li class="header-list-item cursor">
-              <a href="./bookmark.html"
-                 data-i18n="nav.bookmarks" >bookmark<span class="s-span">S</span></a
-              >
+    <div class="app-container">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <a href="./index.html" class="header-logo-link">
+            <img src="/dmark_favicon.svg" alt="DMark Logo" class="sidebar-logo" />
+            <span>DMark</span>
+          </a>
+        </div>
+
+        <div class="user-profile">
+          <img src="./src/images/anonym.svg" alt="User Avatar" class="user-avatar" />
+          <span class="user-name">Anonym228</span>
+        </div>
+
+        <nav class="sidebar-nav">
+          <ul>
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link" data-i18n="nav.home">
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a href="./bookmark.html" class="nav-link" data-i18n="nav.bookmarks">
+                <span>All Bookmarks</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <img src="./src/images/time.svg" alt="History Icon" />
+                <span>History</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <img src="./src/images/setting.svg" alt="Settings Icon" />
+                <span>Settings</span>
+              </a>
             </li>
           </ul>
-          <div class="header-theme">
-            <button
-              id="theme-toggle"
-              class="theme-toggle"
-              aria-label="Переключить тему"
-            >
-              <span class="icon"
-                ><img src="./src/images/sun.svg" alt="sun"
-              /></span>
-            </button>
-          </div>
-          <div class="chooseLanguage chooseLanguageJS">
-            <button class="lang-switch-btn english_langJS" data-lang="en">
-              <img
-                src="./src/images/english_lang.svg"
-                alt="English Language Flag"
-              />
-            </button>
-            <button class="lang-switch-btn ukrainian_langJS" data-lang="uk">
-              <img
-                src="./src/images/ukrainian_lang.svg"
-                alt="Ukrainian Language Flag"
-              />
-            </button>
-          </div>
         </nav>
-      </div>
-    </header>
-    <main>
-      <section class="bookmarks">
-        <div class="container">
-          <div class="dashbord position">
-            <!-- Если папок или закладак в них много, то попробовать overflow: scroll; -->
-            <button class="addNewFolder" data-action="open-modal">+</button>
-            <button class="resetBtn reset-bookmarksBtnJS">
-              <img src="./src/images/reset.svg" alt="reset" class="resetImg">
-            </button>
-            <h2 class="createBookmarkTitle BookmarkTitleJS">Create your first bookmark...</h2>
-            <ul class="bookmark-list"></ul>
+
+        <div class="sidebar-footer">
           </div>
+      </aside>
+
+      <div class="main-content">
+        <header class="top-header">
+          <div class="search-bar">
+            <img src="./src/images/search.svg" alt="Search Icon" class="search-icon" />
+            <input type="text" placeholder="Search" class="search-input" />
+          </div>
+          <div class="header-right-controls">
+            <div class="header-theme">
+                <button
+                  id="theme-toggle"
+                  class="theme-toggle"
+                  aria-label="Переключить тему"
+                >
+                    <img src="./src/images/sun.svg" alt="sun">
+                </button>
+            </div>
+            <div class="chooseLanguage chooseLanguageJS">
+              <button class="lang-switch-btn english_langJS" data-lang="en">EN</button>
+              <button class="lang-switch-btn ukrainian_langJS" data-lang="uk">UK</button>
+              <button class="lang-switch-btn russian_langJS" data-lang="ru">RU</button>
+            </div>
+          </div>
+        </header>
+
+        <main class="dashboard-main">
+          <section class="dashboard-section all-folders-section">
+            <div class="section-header-with-controls">
+                <h2>All Folders</h2>
+                <div class="folder-controls">
+                    <button class="addNewFolder" data-action="open-modal">+</button>
+                    <button class="resetBtn reset-bookmarksBtnJS">
+                        <img src="./src/images/reset.svg" alt="reset" class="resetImg">
+                    </button>
+                </div>
+            </div>
+            
+            <input type="text" placeholder="Search folders..." class="folders-search-input foldersSearchJS" />
+            
+            <div class="folders-grid-wrapper"> 
+                <p class="createBookmarkTitle BookmarkTitleJS">Create your first bookmark...</p>
+                <div class="folders-grid bookmark-list"> 
+                    </div>
+            </div>
+          </section>
+        </main>
+
+        <div class="ai-assistant-fab">
+          <span class="ai-text">AI Assistant</span>
+          <span class="ai-helper">AI Helper</span>
         </div>
-      </section>
-    </main>
-    <footer></footer>
+      </div>
+    </div>
+
     <div class="backdrop js-backdrop">
       <div class="modal">
         <button type="button" class="closeBtn" data-action="close-modal">
@@ -132,6 +174,30 @@
         </form>
       </div>
     </div>
+
+    <div class="folder-details-backdrop js-folder-details-backdrop">
+        <div class="folder-details-modal">
+            <button type="button" class="close-details-modal-btn" title="Close">
+                &times;
+            </button>
+
+            <div class="folder-details-header">
+                <h2 class="folder-details-title">Folder Name</h2>
+                <div class="folder-name-edit-group">
+                    <input type="text" class="folder-name-edit-input" placeholder="Edit folder name">
+                    <button type="button" class="save-folder-name-btn">Save</button>
+                </div>
+            </div>
+            
+            <ul class="folder-links-list">
+                <li class="no-links-message">No links in this folder yet.</li>
+            </ul>
+
+            <div class="folder-details-footer">
+                <button type="button" class="delete-folder-btn">Delete Folder</button>
+            </div>
+        </div>
+    </div>
     <script type="module" src="/src/bookmarks-modal2.js"></script>
-  </body>
+</body>
 </html>

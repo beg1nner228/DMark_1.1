@@ -1,14 +1,13 @@
 import './JS/i18n.js';
 import './css/reset.css';
-import './css/style.css';
-import './css/languages.css';
 import './css/bookmarks.css'
 import './css/container.css';
 import './JS/theme.js';
-import './JS/bookmarks/modals.js'
-import './JS/render-bookmarks.js'
+import './JS/bookmarks/modals.js';
+import './JS/render-bookmarks.js';
 import './JS/bookmarks/header.js';
-
+import "./css/folder-details-modal.css";
+import "./JS/folder-details-modal.js";
 
 const data = localStorage.getItem("dashMarkBookmarks");
 const firstBookmark = document.querySelector(".BookmarkTitleJS");

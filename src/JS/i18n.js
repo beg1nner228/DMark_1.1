@@ -61,18 +61,6 @@ i18next
                         home: "Home",
                         bookmarks: "Bookmarks"
                     },
-                    footer: {
-                        information: "Information",
-                        project: "About the Project",
-                        help: "Help / FAQ",
-                        "contact": "Contact",
-                        command: "Administration",
-                        policy: "Privacy Policy",
-                        conditionals: "Terms of Use",
-                        follow: "Follow Us",
-                        creator: "Developer @Blazequiz",
-                        privacy: "© 2024. All rights reserved" 
-                    },
                     form: {
                         title: "Add new folder / link",
                         name: "Folder name (or existing):",
@@ -81,6 +69,13 @@ i18next
                         icon: "Icon (optional):",
                         accept: "Confirm"
                     },
+                    main: {
+                        access: "Quick Access"
+                    },
+                    sidebar: {
+                        history: "History",
+                        settings: "Settings"
+                    },                    
                     input: {
                         folder_name: "Example, 'Work'",
                         link_name: "Example, 'YouTube'"
@@ -93,18 +88,6 @@ i18next
                         "home": "Головна",
                         "bookmarks": "Закладки"
                     },
-                    footer: {
-                        information: "Інформація",
-                        project: "Про Проект",
-                        help: "Допомога / FAQ",
-                        contact: "Контакт",
-                        command: "Управління",
-                        policy: "Політика конфіденційності",
-                        conditionals: "Умови використання",
-                        follow: "Слідкуй за нами",
-                        creator: "Розробник @Blazequiz",
-                        privacy: "© 2024. Всі права захищені"
-                    },
                     form: {
                         title: "Додати нову папку / посилання",
                         name: "Назва папки (або існуюча):",
@@ -112,6 +95,13 @@ i18next
                         linkTitle: "Назва посилання:",
                         icon: "Іконка (опціонально):",
                         accept: "Підтвердити"
+                    },
+                    main: {
+                        acces: "Швидкий Доступ"
+                    },
+                    sidebar: {
+                        history: "Історія",
+                        settings: "Налаштування"
                     },
                     input: {
                         folder_name: "Наприклад, 'Робота'",
