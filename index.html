@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/DMark_1.1/dmark_favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DashMark</title>
+    <title>DMark - Dashboard</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
@@ -13,204 +13,177 @@
       referrerpolicy="no-referrer"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Chewy&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
-      rel="stylesheet"
-    />
-    <script type="module" crossorigin src="/DMark_1.1/assets/main-_LXDQwyU.js"></script>
-    <link rel="modulepreload" crossorigin href="/DMark_1.1/assets/header-DlD6KKUP.js">
-    <link rel="stylesheet" crossorigin href="/DMark_1.1/assets/header-DwCGbTgS.css">
+    <script type="module" crossorigin src="/DMark_1.1/assets/main-BFs2ToUz.js"></script>
+    <link rel="modulepreload" crossorigin href="/DMark_1.1/assets/theme-DXoqlLxu.js">
+    <link rel="stylesheet" crossorigin href="/DMark_1.1/assets/theme-BlmI_qJu.css">
+    <link rel="stylesheet" crossorigin href="/DMark_1.1/assets/main-Bxvh0hy5.css">
   </head>
   <body>
-    <header class="header">
-      <div class="container">
-        <nav class="header-nav">
-          <a href="./index.html" class="header-logo-link"
-            ><img src="./dmark_favicon.svg" alt="logo"
-          /></a>
-          <ul class="header-list">
-            <li class="header-list-item cursor" data-i18n="nav.home">home</li>
-            <li class="header-list-item">|</li>
-            <li class="header-list-item cursor">
-              <a href="./bookmark.html"
-                 data-i18n="nav.bookmarks" >bookmark<span class="s-span">S</span></a
-              >
+    <div class="app-container">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <a href="./index.html" class="header-logo-link">
+            <img src="/DMark_1.1/dmark_favicon.svg" alt="DMark Logo" class="sidebar-logo" />
+            <span>DMark</span>
+          </a>
+        </div>
+
+        <div class="user-profile">
+          <img src="/DMark_1.1/assets/anonym-CZ4cwFDI.svg" alt="User Avatar" class="user-avatar" />
+          <span class="user-name">Anonym228</span>
+        </div>
+
+        <nav class="sidebar-nav">
+          <ul>
+            <li class="nav-item active">
+              <a href="#" class="nav-link" data-i18n="nav.home">
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./bookmark.html" class="nav-link" data-i18n="nav.bookmarks">
+                <span>All Bookmarks</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <img src="/DMark_1.1/assets/time-CET2wgX2.svg" alt="History Icon" />
+                <span data-i18n="sidebar.history">History</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <img src="/DMark_1.1/assets/setting-CjIZKw8V.svg" alt="Settings Icon" />
+                <span data-i18n="sidebar.settings">Settings</span>
+              </a>
             </li>
           </ul>
-          <div class="header-theme">
-            <button
-              id="theme-toggle"
-              class="theme-toggle"
-              aria-label="Переключить тему"
-            >
-              <span class="icon"
-                ><img src="/DMark_1.1/assets/sun-BDwAIx65.svg" alt="sun"
-              /></span>
-            </button>
-          </div>
-          <div class="chooseLanguage chooseLanguageJS">
-            <button class="lang-switch-btn english_langJS" data-lang="en">
-              <img
-                src="/DMark_1.1/assets/english_lang-DlYTVtCN.svg"
-                alt="English Language Flag"
-              />
-            </button>
-            <button class="lang-switch-btn ukrainian_langJS" data-lang="uk">
-              <img
-                src="/DMark_1.1/assets/ukrainian_lang-BFGS4eJO.svg"
-                alt="Ukrainian Language Flag"
-              />
-            </button>
-          </div>
         </nav>
-      </div>
-    </header>
-    <main class="main">
-      <section>
-        <div class="container">
-          <div class="slider-flex-elements">
-            <button class="prev slider-btn" data-value="prev">‹</button>
 
-            <div class="slider-wrapper">
-              <div class="slider-container sliderJS">
-                <div class="slide">
-                  <div class="folder-card">
-                    <div class="folder-header">
-                      <img
-                        src="/DMark_1.1/assets/folder-DogtCluV.svg"
-                        alt="folder icon"
-                        class="folder-icon"
-                      />
-                      <span class="folder-name">Example</span>
-                    </div>
-                    <div class="folder-preview">
-                      <a href="">Google Docs</a>
-                      <a href="">GitHub Repo</a>
-                    </div>
-                  </div>
-                </div>
+        <div class="sidebar-footer">
+          <!-- <img src="./src/images/cloud-computing.svg" alt="Cloud Icon" class="cloud-icon" /> -->
+        </div>
+      </aside>
 
-                <div class="slide">
-                  <div class="folder-card">
-                    <div class="folder-header">
-                      <img
-                        src="/DMark_1.1/assets/folder-DogtCluV.svg"
-                        alt="folder icon"
-                        class="folder-icon"
-                      />
-                      <span class="folder-name">Example</span>
-                    </div>
-                    <div class="folder-preview">
-                      <a href="">YouTube</a>
-                      <a href="">Spotify</a>
-                    </div>
-                  </div>
-                </div>
+      <div class="main-content">
+        <header class="top-header">
+          <div class="search-bar">
+            <img src="/DMark_1.1/assets/search-CNRA1XcB.svg" alt="Search Icon" class="search-icon" />
+            <input type="text" placeholder="Search" class="search-input" />
+          </div>
+          <div class="header-right-controls">
+            <div class="header-theme">
+                <button
+                  id="theme-toggle"
+                  class="theme-toggle"
+                  aria-label="Переключить тему"
+                >
+                    <img src="/DMark_1.1/assets/sun-BDwAIx65.svg" alt="sun">
+                </button>
+            </div>
+            <div class="chooseLanguage chooseLanguageJS">
+              <button class="lang-switch-btn english_langJS" data-lang="en">EN</button>
+              <button class="lang-switch-btn ukrainian_langJS" data-lang="uk">UK</button>
+              <button class="lang-switch-btn russian_langJS" data-lang="ru">RU</button>
+            </div>
+            </div>
+        </header>
 
-                <div class="slide">
-                  <div class="folder-card">
-                    <div class="folder-header">
-                      <img
-                        src="/DMark_1.1/assets/folder-DogtCluV.svg"
-                        alt="folder icon"
-                        class="folder-icon"
-                      />
-                      <span class="folder-name">Example</span>
-                    </div>
-                    <div class="folder-preview">
-                      <a href="">YouTube</a>
-                      <a href="">Spotify</a>
-                    </div>
-                  </div>
+        <main class="dashboard-main">
+          <section class="dashboard-section quick-access-section">
+            <h2 data-i18n="main.access">Quick Access</h2>
+            <div class="folders-grid">
+              <div class="folder-card" style="--folder-color: var(--accent-purple);">
+                <div class="folder-header">
+                  <img src="/DMark_1.1/assets/folder-DogtCluV.svg" alt="Dev Tools Icon" class="folder-icon" />
+                  <span class="folder-name">Dev Tools</span>
                 </div>
-
-                <div class="slide">
-                  <div class="folder-card">
-                    <div class="folder-header">
-                      <img
-                        src="/DMark_1.1/assets/folder-DogtCluV.svg"
-                        alt="folder icon"
-                        class="folder-icon"
-                      />
-                      <span class="folder-name">Example</span>
-                    </div>
-                    <div class="folder-preview">
-                      <a href="">YouTube</a>
-                      <a href="">Spotify</a>
-                    </div>
-                  </div>
+                <div class="folder-preview-icons">
+                  <img src="/DMark_1.1/assets/dashboard-test-CwUSvyjG.svg" alt="Code" />
+                  <img src="/DMark_1.1/assets/dashboard-test-CwUSvyjG.svg" alt="Figma" />
+                  <img src="/DMark_1.1/assets/dashboard-test-CwUSvyjG.svg" alt="Notion" />
+                  <img src="/DMark_1.1/assets/plus-DIT7Ct40.svg" alt="Add" class="add-icon" />
                 </div>
-                <!-- ещё слайды... -->
+              </div>
+              <div class="folder-card" style="--folder-color: var(--accent-orange);">
+                <div class="folder-header">
+                  <img src="/DMark_1.1/assets/folder-DogtCluV.svg" alt="Work Icon" class="folder-icon" />
+                  <span class="folder-name">Work</span>
+                </div>
+                <div class="folder-preview-icons">
+                  <img src="/DMark_1.1/assets/dashboard-test-CwUSvyjG.svg" alt="Drive" />
+                  <img src="/DMark_1.1/assets/dashboard-test-CwUSvyjG.svg" alt="Docs" />
+                  <img src="/DMark_1.1/assets/dashboard-test-CwUSvyjG.svg" alt="Sheets" />
+                  <img src="/DMark_1.1/assets/plus-DIT7Ct40.svg" alt="Add" class="add-icon" />
+                </div>
+              </div>
+              <!--  -->
+              <div class="folder-card" style="--folder-color: var(--accent-blue);">
+                <div class="folder-header">
+                  <img src="/DMark_1.1/assets/folder-DogtCluV.svg" alt="Ideas Icon" class="folder-icon" />
+                  <span class="folder-name">Ideas</span>
+                </div>
+                <div class="folder-preview-icons">
+                  <img src="/DMark_1.1/assets/dashboard-test-CwUSvyjG.svg" alt="Miro" />
+                  <img src="/DMark_1.1/assets/dashboard-test-CwUSvyjG.svg" alt="PDF" />
+                  <img src="/DMark_1.1/assets/dashboard-test-CwUSvyjG.svg" alt="Notion" />
+                  <img src="/DMark_1.1/assets/plus-DIT7Ct40.svg" alt="Add" class="add-icon" />
+                </div>
               </div>
             </div>
-            <button class="next slider-btn" data-value="next">›</button>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <div class="container footer-grid">
-        <div class="footer-col footer-info">
-          <a class="footer-brand"
-            ><img src="dmark_favicon.svg" alt="logo" class="logo"
-          /></a>
-          <p class="footer-version">v1.0.0</p>
-          <p class="footer-copyright" data-i18n="footer.privacy">&copy; 2024. Все права защищены.</p> <!--  -->
-        </div>
+          </section>
 
-        <div class="footer-col footer-links">
-          <h4 data-i18n="footer.information">Информация</h4>
-          <ul>
-            <li><a href="#" data-i18n="footer.project">О проекте</a></li>
-            <li><a href="#" data-i18n="footer.help">Помощь / FAQ</a></li>
-            <li><a href="#" data-i18n="footer.contact">Связаться</a></li>
-          </ul>
-        </div>
+          <section class="dashboard-section recent-bookmarks-section">
+            <h2>Recent Bookmarks</h2>
+            <ul class="bookmarks-list">
+              <li class="bookmark-item">
+                <div class="bookmark-info">
+                  <div class="bookmark-color-indicator" style="background-color: var(--accent-blue);"></div>
+                  <img src="./src/images/link_icon.svg" alt="Link Icon" class="bookmark-favicon" />
+                  <span class="bookmark-title">Generative AI Guide</span>
+                </div>
+                <div class="bookmark-actions">
+                  <img src="./src/images/external_link_icon.svg" alt="External Link" class="action-icon" />
+                  <img src="./src/images/edit_icon.svg" alt="Edit" class="action-icon" />
+                  <img src="./src/images/delete_icon.svg" alt="Delete" class="action-icon" />
+                </div>
+              </li>
+              <li class="bookmark-item">
+                <div class="bookmark-info">
+                  <div class="bookmark-color-indicator" style="background-color: var(--accent-green);"></div>
+                  <img src="./src/images/link_icon.svg" alt="Link Icon" class="bookmark-favicon" />
+                  <span class="bookmark-title">New CSS Grid Tutorial</span>
+                </div>
+                <div class="bookmark-actions">
+                  <img src="./src/images/external_link_icon.svg" alt="External Link" class="action-icon" />
+                  <img src="./src/images/edit_icon.svg" alt="Edit" class="action-icon" />
+                  <img src="./src/images/delete_icon.svg" alt="Delete" class="action-icon" />
+                </div>
+              </li>
+              <li class="bookmark-item">
+                <div class="bookmark-info">
+                  <div class="bookmark-color-indicator" style="background-color: var(--accent-red);"></div>
+                  <img src="./src/images/link_icon.svg" alt="Link Icon" class="bookmark-favicon" />
+                  <span class="bookmark-title">Project ChronoForge Repo</span>
+                </div>
+                <div class="bookmark-actions">
+                  <img src="./src/images/external_link_icon.svg" alt="External Link" class="action-icon" />
+                  <img src="./src/images/edit_icon.svg" alt="Edit" class="action-icon" />
+                  <img src="./src/images/delete_icon.svg" alt="Delete" class="action-icon" />
+                </div>
+              </li>
+            </ul>
+          </section>
+        </main>
 
-        <div class="footer-col footer-legal">
-          <h4 data-i18n="footer.command">Управление</h4>
-          <ul>
-            <li><a href="#" data-i18n="footer.policy">Политика конфиденциальности</a></li>
-            <li><a href="#" data-i18n="footer.conditionals">Условия использования</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col footer-social">
-          <h4 data-i18n="footer.follow">Следите за нами</h4>
-          <div class="social-icons">
-            <a
-              href="https://github.com/your-repo"
-              target="_blank"
-              aria-label="GitHub"
-            >
-              <img
-                src="/DMark_1.1/assets/github-HDlAmhiW.svg"
-                alt="GitHub"
-                class="social-icon"
-              />
-            </a>
-            <a href="#" target="_blank" aria-label="Twitter/X">
-              <img
-                src="/DMark_1.1/assets/twitter-BUyu8ISo.svg"
-                alt="Twitter/X"
-                class="social-icon"
-              />
-            </a>
-            <a href="#" target="_blank" aria-label="LinkedIn">
-              <img
-                src="/DMark_1.1/assets/linkedin-XLBkL_WW.svg"
-                alt="LinkedIn"
-                class="social-icon"
-              />
-            </a>
-          </div>
-
-          <p class="footer-creator" data-i18n="footer.creator">Создатель @Blazequiz</p>
+        <div class="ai-assistant-fab">
+          <span class="ai-text">AI Assistant</span>
+          <span class="ai-helper">AI Helper</span>
         </div>
       </div>
-    </footer>
-  </body>
+    </div>
+    </body>
 </html>
