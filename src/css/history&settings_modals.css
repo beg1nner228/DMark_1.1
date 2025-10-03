@@ -1,0 +1,115 @@
+/* Например, в вашем style.css */
+.history-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.history-modal-backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.history-modal-content {
+    background-color: transparent; /* Используйте свои переменные */
+    border-radius: 8px;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.history-modal-content .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--primary-light-gray); /* Используйте свои переменные */
+    cursor: pointer;
+    line-height: 1;
+}
+.history-modal-content .close-btn:hover {
+    color: var(--accent-red);
+}
+
+.history-modal-title {
+    color: var(--primary-white); /* Используйте свои переменные */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.history-search-container {
+    margin-bottom: 15px;
+}
+
+.history-search-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color); /* Используйте свои переменные */
+    background-color: var(--input-bg-color); /* Используйте свои переменные */
+    color: var(--primary-white);
+}
+
+.history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.history-list-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--primary-light-gray);
+}
+.history-list-item:last-child {
+    border-bottom: none;
+}
+
+.history-list-item a {
+    color: var(--accent-blue); /* Или любой другой цвет для ссылок */
+    text-decoration: none;
+    margin-right: 10px;
+    flex-grow: 1;
+    font-size: 1.1em;
+}
+.history-list-item a:hover {
+    text-decoration: underline;
+}
+
+.history-list-item .history-link-favicon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.history-list-item .history-visited-at {
+    font-size: 0.8em;
+    color: var(--text-muted); /* Используйте свои переменные */
+    flex-shrink: 0;
+    margin-left: auto; /* Прижимает к правому краю */
+}
+
+.no-history-message {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 20px;
+}

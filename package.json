@@ -17,6 +17,7 @@
     "@pnotify/bootstrap4": "^5.2.0",
     "i18next": "^25.5.2",
     "i18next-browser-languagedetector": "^8.2.0",
+    "nanoid": "^5.1.6",
     "pnotify": "^5.2.0"
   }
 }

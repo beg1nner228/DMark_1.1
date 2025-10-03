@@ -45,7 +45,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="#" class="nav-link historyBtnJS">
                 <img src="./src/images/time.svg" alt="History Icon" />
                 <span data-i18n="sidebar.history">History</span>
               </a>
@@ -129,11 +129,37 @@
                   <img src="./src/images/plus.svg" alt="Add" class="add-icon" />
                 </div>
               </div>
+              <!--  -->
+              <div class="folder-card" style="--folder-color: var(--accent-blue);">
+                <div class="folder-header">
+                  <img src="./src/images/folder.svg" alt="Ideas Icon" class="folder-icon" />
+                  <span class="folder-name">Vacation</span>
+                </div>
+                <div class="folder-preview-icons">
+                  <img src="./src/images/dashboard-test.svg" alt="Miro" />
+                  <img src="./src/images/dashboard-test.svg" alt="PDF" />
+                  <img src="./src/images/dashboard-test.svg" alt="Notion" />
+                  <img src="./src/images/plus.svg" alt="Add" class="add-icon" />
+                </div>
+              </div>   
+              <!--  -->
+              <div class="folder-card" style="--folder-color: var(--accent-blue);">
+                <div class="folder-header">
+                  <img src="./src/images/folder.svg" alt="Ideas Icon" class="folder-icon" />
+                  <span class="folder-name">School</span>
+                </div>
+                <div class="folder-preview-icons">
+                  <img src="./src/images/dashboard-test.svg" alt="Miro" />
+                  <img src="./src/images/dashboard-test.svg" alt="PDF" />
+                  <img src="./src/images/dashboard-test.svg" alt="Notion" />
+                  <img src="./src/images/plus.svg" alt="Add" class="add-icon" />
+                </div>
+              </div>              
             </div>
           </section>
 
           <section class="dashboard-section recent-bookmarks-section">
-            <h2>Recent Bookmarks</h2>
+            <h2 data-i18n="dashboardSection.recent">Recent Bookmarks</h2>
             <ul class="bookmarks-list">
               <li class="bookmark-item">
                 <div class="bookmark-info">
@@ -181,6 +207,22 @@
         </div>
       </div>
     </div>
+
+      <div class="history-modal-backdrop js-history-modal-backdrop">
+      <div class="history-modal-content">
+          <button type="button" class="close-btn js-close-history-modal-btn">
+              &times;
+          </button>
+          <h2 class="history-modal-title">История Просмотров</h2>
+          <div class="history-search-container">
+              <input type="text" class="history-search-input js-history-search-input" placeholder="Поиск в истории...">
+          </div>
+          <ul class="history-list js-history-list">
+              </ul>
+          <p class="no-history-message js-no-history-message" style="display: none;">История пуста или ничего не найдено.</p>
+      </div>
+  </div>
+  
     <script type="module" src="/src/main.js"></script>
     </body>
 </html>

@@ -70,8 +70,12 @@ i18next
                         accept: "Confirm"
                     },
                     main: {
-                        access: "Quick Access"
+                        access: "Quick Access",
+                        folderTitle: "All Folders"
                     },
+                    dashboardSection: {
+                        recent: "Recent Bookmarks"
+                    },                    
                     sidebar: {
                         history: "History",
                         settings: "Settings"
@@ -79,7 +83,13 @@ i18next
                     input: {
                         folder_name: "Example, 'Work'",
                         link_name: "Example, 'YouTube'"
-                    } 
+                    },
+                    notifications: {
+                        errorTitle: "Error",                          
+                        error: "This function is not available yet.",
+                        success: "Operation completed successfully!",
+                        warning: "Please try again later."
+                    }                    
                 } 
             }, 
             uk: {
@@ -97,7 +107,11 @@ i18next
                         accept: "Підтвердити"
                     },
                     main: {
-                        acces: "Швидкий Доступ"
+                        access: "Швидкий Доступ",
+                        folderTitle: "Всі Папки"                        
+                    },
+                    dashboardSection: {
+                        recent: "Останні Закладки"
                     },
                     sidebar: {
                         history: "Історія",
@@ -106,9 +120,52 @@ i18next
                     input: {
                         folder_name: "Наприклад, 'Робота'",
                         link_name: "Наприклад, 'Цікаве Відео'"
-                    } 
+                    }, 
+                    notifications: {
+                        errorTitle: "Помлика",                        
+                        error: "Ця функція поки недоступна.",
+                        success: "Операцію виконано успішно!",
+                        warning: "Будь ласка, спробуйте пізніше."
+                    }
                 } 
-            } 
+            },
+            ru: {
+                translation: { 
+                    nav: {
+                        home: "Главная",
+                        bookmarks: "Закладки"
+                    },
+                    form: {
+                        title: "Добавить папку / ссылку",
+                        name: "Имя папки (или существующая):",
+                        url: "URL Ссылки:",
+                        linkTitle: "Заголовок Ссылки:",
+                        icon: "Иконка (опционально):",
+                        accept: "Потвердить"
+                    },
+                    main: {
+                        access: "Быстрый Доступ",
+                        folderTitle: "Все Папки"                        
+                    },
+                    dashboardSection: {
+                        recent: "Недавние Закладки"
+                    },                    
+                    sidebar: {
+                        history: "История",
+                        settings: "Настройки"
+                    },                    
+                    input: {
+                        folder_name: "Пример, 'Работа'",
+                        link_name: "Пример, 'Интересное Видео'"
+                    },
+                    notifications: {
+                        errorTitle: "Ошибка",
+                        error: "Эта функция пока недоступна.",
+                        success: "Операция выполнена успешно!",
+                        warning: "Попробуйте позже."
+                    }                    
+                } 
+            }            
         }, 
         fallbackLng: 'en', 
         ns: ['translation'],
