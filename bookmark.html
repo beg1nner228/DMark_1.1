@@ -7,8 +7,8 @@
     <title>DMark - All Bookmarks</title>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
-      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDBQ=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
@@ -17,9 +17,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./src/style.css" />
-    <script type="module" crossorigin src="/DMark_1.1/assets/bookmarks-qAv9amfz.js"></script>
-    <link rel="modulepreload" crossorigin href="/DMark_1.1/assets/theme-DXoqlLxu.js">
-    <link rel="stylesheet" crossorigin href="/DMark_1.1/assets/theme-BlmI_qJu.css">
+    <script type="module" crossorigin src="/DMark_1.1/assets/bookmarks-DaIWY1Vl.js"></script>
+    <link rel="modulepreload" crossorigin href="/DMark_1.1/assets/history-BLTPxMQm.js">
+    <link rel="stylesheet" crossorigin href="/DMark_1.1/assets/history-CJ8DDfHh.css">
     <link rel="stylesheet" crossorigin href="/DMark_1.1/assets/bookmarks-77WCQfaJ.css">
   </head>
   <body>
@@ -27,13 +27,21 @@
       <aside class="sidebar">
         <div class="sidebar-header">
           <a href="./index.html" class="header-logo-link">
-            <img src="/DMark_1.1/dmark_favicon.svg" alt="DMark Logo" class="sidebar-logo" />
+            <img
+              src="/DMark_1.1/dmark_favicon.svg"
+              alt="DMark Logo"
+              class="sidebar-logo"
+            />
             <span>DMark</span>
           </a>
         </div>
 
         <div class="user-profile">
-          <img src="/DMark_1.1/assets/anonym-CZ4cwFDI.svg" alt="User Avatar" class="user-avatar" />
+          <img
+            src="/DMark_1.1/assets/anonym-CZ4cwFDI.svg"
+            alt="User Avatar"
+            class="user-avatar"
+          />
           <span class="user-name">Anonym228</span>
         </div>
 
@@ -45,49 +53,62 @@
               </a>
             </li>
             <li class="nav-item active">
-              <a href="./bookmark.html" class="nav-link" data-i18n="nav.bookmarks">
+              <a
+                href="./bookmark.html"
+                class="nav-link"
+                data-i18n="nav.bookmarks"
+              >
                 <span>All Bookmarks</span>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="#" class="nav-link historyBtnJS">
                 <img src="/DMark_1.1/assets/time-CET2wgX2.svg" alt="History Icon" />
-                <span>History</span>
+                <span data-i18n="sidebar.history">History</span>
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <img src="/DMark_1.1/assets/setting-CjIZKw8V.svg" alt="Settings Icon" />
-                <span>Settings</span>
+                <span data-i18n="sidebar.settings">Settings</span>
               </a>
             </li>
           </ul>
         </nav>
 
-        <div class="sidebar-footer">
-          </div>
+        <div class="sidebar-footer"></div>
       </aside>
 
       <div class="main-content">
         <header class="top-header">
           <div class="search-bar">
-            <img src="/DMark_1.1/assets/search-CNRA1XcB.svg" alt="Search Icon" class="search-icon" />
+            <img
+              src="/DMark_1.1/assets/search-CNRA1XcB.svg"
+              alt="Search Icon"
+              class="search-icon"
+            />
             <input type="text" placeholder="Search" class="search-input" />
           </div>
           <div class="header-right-controls">
             <div class="header-theme">
-                <button
-                  id="theme-toggle"
-                  class="theme-toggle"
-                  aria-label="Переключить тему"
-                >
-                    <img src="/DMark_1.1/assets/sun-BDwAIx65.svg" alt="sun">
-                </button>
+              <button
+                id="theme-toggle"
+                class="theme-toggle"
+                aria-label="Переключить тему"
+              >
+                <img src="/DMark_1.1/assets/sun-BDwAIx65.svg" alt="sun" />
+              </button>
             </div>
             <div class="chooseLanguage chooseLanguageJS">
-              <button class="lang-switch-btn english_langJS" data-lang="en">EN</button>
-              <button class="lang-switch-btn ukrainian_langJS" data-lang="uk">UK</button>
-              <button class="lang-switch-btn russian_langJS" data-lang="ru">RU</button>
+              <button class="lang-switch-btn english_langJS" data-lang="en">
+                EN
+              </button>
+              <button class="lang-switch-btn ukrainian_langJS" data-lang="uk">
+                UK
+              </button>
+              <button class="lang-switch-btn russian_langJS" data-lang="ru">
+                RU
+              </button>
             </div>
           </div>
         </header>
@@ -95,21 +116,30 @@
         <main class="dashboard-main">
           <section class="dashboard-section all-folders-section">
             <div class="section-header-with-controls">
-                <h2>All Folders</h2>
-                <div class="folder-controls">
-                    <button class="addNewFolder" data-action="open-modal">+</button>
-                    <button class="resetBtn reset-bookmarksBtnJS">
-                        <img src="/DMark_1.1/assets/reset-C6Qeh_R-.svg" alt="reset" class="resetImg">
-                    </button>
-                </div>
+              <h2 data-i18n="main.folderTitle">All Folders</h2>
+              <div class="folder-controls">
+                <button class="addNewFolder" data-action="open-modal">+</button>
+                <button class="resetBtn reset-bookmarksBtnJS">
+                  <img
+                    src="/DMark_1.1/assets/reset-C6Qeh_R-.svg"
+                    alt="reset"
+                    class="resetImg"
+                  />
+                </button>
+              </div>
             </div>
-            
-            <input type="text" placeholder="Search folders..." class="folders-search-input foldersSearchJS" />
-            
-            <div class="folders-grid-wrapper"> 
-                <p class="createBookmarkTitle BookmarkTitleJS">Create your first bookmark...</p>
-                <div class="folders-grid bookmark-list"> 
-                    </div>
+
+            <input
+              type="text"
+              placeholder="Search folders..."
+              class="folders-search-input foldersSearchJS"
+            />
+
+            <div class="folders-grid-wrapper">
+              <p class="createBookmarkTitle BookmarkTitleJS">
+                Create your first bookmark...
+              </p>
+              <div class="folders-grid bookmark-list"></div>
             </div>
           </section>
         </main>
@@ -127,11 +157,15 @@
           &times;
         </button>
 
-        <h2 class="modal-title" data-i18n="form.title">Добавить новую папку / ссылку</h2>
+        <h2 class="modal-title" data-i18n="form.title">
+          Добавить новую папку / ссылку
+        </h2>
 
         <form class="new-folder-form">
           <div class="form-group">
-            <label for="folderName" data-i18n="form.name">Имя папки (или существующая):</label>
+            <label for="folderName" data-i18n="form.name"
+              >Имя папки (или существующая):</label
+            >
             <input
               type="text"
               id="folderName"
@@ -154,7 +188,9 @@
           </div>
 
           <div class="form-group">
-            <label for="bookmarkTitle" data-i18n="form.linkTitle">Заголовок Ссылки:</label>
+            <label for="bookmarkTitle" data-i18n="form.linkTitle"
+              >Заголовок Ссылки:</label
+            >
             <input
               type="text"
               id="bookmarkTitle"
@@ -165,7 +201,9 @@
           </div>
 
           <div class="form-group">
-            <label for="folderIcon" data-i18n="form.icon">Значок (необязательно):</label>
+            <label for="folderIcon" data-i18n="form.icon"
+              >Значок (необязательно):</label
+            >
             <input
               type="file"
               id="folderIcon"
@@ -174,33 +212,65 @@
             />
           </div>
 
-          <button type="submit" class="submit-btn" data-i18n="form.accept">Подтвердить</button>
+          <button type="submit" class="submit-btn" data-i18n="form.accept">
+            Подтвердить
+          </button>
         </form>
       </div>
     </div>
 
     <div class="folder-details-backdrop js-folder-details-backdrop">
-        <div class="folder-details-modal">
-            <button type="button" class="close-details-modal-btn" title="Close">
-                &times;
-            </button>
+      <div class="folder-details-modal">
+        <button type="button" class="close-details-modal-btn" title="Close">
+          &times;
+        </button>
 
-            <div class="folder-details-header">
-                <h2 class="folder-details-title">Folder Name</h2>
-                <div class="folder-name-edit-group">
-                    <input type="text" class="folder-name-edit-input" placeholder="Edit folder name">
-                    <button type="button" class="save-folder-name-btn">Save</button>
-                </div>
-            </div>
-            
-            <ul class="folder-links-list">
-                <li class="no-links-message">No links in this folder yet.</li>
-            </ul>
-
-            <div class="folder-details-footer">
-                <button type="button" class="delete-folder-btn">Delete Folder</button>
-            </div>
+        <div class="folder-details-header">
+          <h2 class="folder-details-title">Folder Name</h2>
+          <div class="folder-name-edit-group">
+            <input
+              type="text"
+              class="folder-name-edit-input"
+              placeholder="Edit folder name"
+            />
+            <button type="button" class="save-folder-name-btn">Save</button>
+          </div>
         </div>
-    </div>
-</body>
+
+        <ul class="folder-links-list">
+          <li class="no-links-message">No links in this folder yet.</li>
+        </ul>
+
+        <div class="folder-details-footer">
+          <button type="button" class="delete-folder-btn">Delete Folder</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- history modal -->
+
+    <div class="history-modal-backdrop js-history-modal-backdrop">
+      <div class="history-modal-content">
+        <button type="button" class="close-btn js-close-history-modal-btn">
+          &times;
+        </button>
+        <h2 class="history-modal-title">История Просмотров</h2>
+        <div class="history-search-container">
+          <input
+            type="text"
+            class="history-search-input js-history-search-input"
+            placeholder="Поиск в истории..."
+          />
+        </div>
+        <ul class="history-list js-history-list"></ul>
+        <p
+          class="no-history-message js-no-history-message"
+          style="display: none"
+        >
+          История пуста или ничего не найдено.
+        </p>
+      </div>
+    </div>
+
+  </body>
 </html>

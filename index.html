@@ -16,9 +16,9 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/DMark_1.1/assets/main-BFs2ToUz.js"></script>
-    <link rel="modulepreload" crossorigin href="/DMark_1.1/assets/theme-DXoqlLxu.js">
-    <link rel="stylesheet" crossorigin href="/DMark_1.1/assets/theme-BlmI_qJu.css">
+    <script type="module" crossorigin src="/DMark_1.1/assets/main-wEFSce_o.js"></script>
+    <link rel="modulepreload" crossorigin href="/DMark_1.1/assets/history-BLTPxMQm.js">
+    <link rel="stylesheet" crossorigin href="/DMark_1.1/assets/history-CJ8DDfHh.css">
     <link rel="stylesheet" crossorigin href="/DMark_1.1/assets/main-Bxvh0hy5.css">
   </head>
   <body>
@@ -49,7 +49,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="#" class="nav-link historyBtnJS">
                 <img src="/DMark_1.1/assets/time-CET2wgX2.svg" alt="History Icon" />
                 <span data-i18n="sidebar.history">History</span>
               </a>
@@ -133,11 +133,37 @@
                   <img src="/DMark_1.1/assets/plus-DIT7Ct40.svg" alt="Add" class="add-icon" />
                 </div>
               </div>
+              <!--  -->
+              <div class="folder-card" style="--folder-color: var(--accent-blue);">
+                <div class="folder-header">
+                  <img src="/DMark_1.1/assets/folder-DogtCluV.svg" alt="Ideas Icon" class="folder-icon" />
+                  <span class="folder-name">Vacation</span>
+                </div>
+                <div class="folder-preview-icons">
+                  <img src="/DMark_1.1/assets/dashboard-test-CwUSvyjG.svg" alt="Miro" />
+                  <img src="/DMark_1.1/assets/dashboard-test-CwUSvyjG.svg" alt="PDF" />
+                  <img src="/DMark_1.1/assets/dashboard-test-CwUSvyjG.svg" alt="Notion" />
+                  <img src="/DMark_1.1/assets/plus-DIT7Ct40.svg" alt="Add" class="add-icon" />
+                </div>
+              </div>   
+              <!--  -->
+              <div class="folder-card" style="--folder-color: var(--accent-blue);">
+                <div class="folder-header">
+                  <img src="/DMark_1.1/assets/folder-DogtCluV.svg" alt="Ideas Icon" class="folder-icon" />
+                  <span class="folder-name">School</span>
+                </div>
+                <div class="folder-preview-icons">
+                  <img src="/DMark_1.1/assets/dashboard-test-CwUSvyjG.svg" alt="Miro" />
+                  <img src="/DMark_1.1/assets/dashboard-test-CwUSvyjG.svg" alt="PDF" />
+                  <img src="/DMark_1.1/assets/dashboard-test-CwUSvyjG.svg" alt="Notion" />
+                  <img src="/DMark_1.1/assets/plus-DIT7Ct40.svg" alt="Add" class="add-icon" />
+                </div>
+              </div>              
             </div>
           </section>
 
           <section class="dashboard-section recent-bookmarks-section">
-            <h2>Recent Bookmarks</h2>
+            <h2 data-i18n="dashboardSection.recent">Recent Bookmarks</h2>
             <ul class="bookmarks-list">
               <li class="bookmark-item">
                 <div class="bookmark-info">
@@ -184,6 +210,22 @@
           <span class="ai-helper">AI Helper</span>
         </div>
       </div>
-    </div>
+    </div>
+
+      <div class="history-modal-backdrop js-history-modal-backdrop">
+      <div class="history-modal-content">
+          <button type="button" class="close-btn js-close-history-modal-btn">
+              &times;
+          </button>
+          <h2 class="history-modal-title">История Просмотров</h2>
+          <div class="history-search-container">
+              <input type="text" class="history-search-input js-history-search-input" placeholder="Поиск в истории...">
+          </div>
+          <ul class="history-list js-history-list">
+              </ul>
+          <p class="no-history-message js-no-history-message" style="display: none;">История пуста или ничего не найдено.</p>
+      </div>
+  </div>
+  
     </body>
 </html>
