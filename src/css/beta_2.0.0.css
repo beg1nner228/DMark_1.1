@@ -1,32 +1,16 @@
-/* src/style.css */
-
-/* --- ЦВЕТОВЫЕ ПЕРЕМЕННЫЕ --- */
-:root {
-    --bg-dark: #121217;
-    --bg-medium: #1A1C24;
-    --bg-light: #242730;
-    --text-primary: #D1D1D1;
-    --text-secondary: #8E929E;
-    --accent-blue: #2F80ED;
-    --accent-green: #27AE60;
-    --accent-red: #EB5757;
-    --accent-purple: #7B61FF; /* Новый цвет для Dev Tools */
-    --accent-orange: #FF8F00; /* Новый цвет для Work */
-    --border-color: #3A3F52;
-    --sidebar-width: 280px;
-}
+@import './common.css';
 
 /* --- ОБЩИЕ СТИЛИ --- */
 body {
-    font-family: 'Inter', sans-serif; /* Или ваш Montserrat/Roboto */
+    font-family: 'Inter', sans-serif; 
     background-color: var(--bg-dark);
     color: var(--text-primary);
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Предотвращает прокрутку всей страницы */
+    overflow: hidden;
 }
 
-/* Скрываем скроллбар для всего приложения */
+
 body::-webkit-scrollbar {
     display: none;
 }
@@ -63,7 +47,7 @@ body {
     margin-bottom: 30px;
 }
 
-.header-logo-link { /* Ваш класс из оригинального HTML */
+.header-logo-link {
     display: flex;
     align-items: center;
     text-decoration: none;

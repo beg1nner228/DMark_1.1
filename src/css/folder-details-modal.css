@@ -1,4 +1,4 @@
-
+@import './common.css';
 /* --- Стили для модального окна деталей папки --- */
 .folder-details-backdrop {
     position: fixed;
