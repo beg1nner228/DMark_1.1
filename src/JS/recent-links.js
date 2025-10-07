@@ -3,7 +3,7 @@ import brainIMG from "../images/brain.svg";
 import linkIMG from "../images/link-dec.svg";
 
 const recentLinksList = document.querySelector(".bookmarks-list")
-const dataLinks = JSON.parse(localStorage.getItem("dashMarkHistory"));
+const dataLinks = JSON.parse(localStorage.getItem("dashMarkHistory") || "[]");
 
 function mark(list) {
   const markup = list.map(li => {
@@ -23,6 +23,7 @@ function mark(list) {
 
   recentLinksList.innerHTML = markup;
 }
+
 
 if(dataLinks.length <= 5) {
   mark(dataLinks);

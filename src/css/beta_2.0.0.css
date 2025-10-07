@@ -195,6 +195,8 @@ body {
     z-index: 100;
 }
 
+
+
 .search-icon {
     width: 20px;
     height: 20px;
@@ -480,5 +482,29 @@ body {
     opacity: 0.8;
 }
 
+.pnotify.pnotify-error .pnotify-container {
+  background-color: var(--accent-red); /* Используйте свои переменные */
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Изменить цвет заголовка */
+.pnotify-title {
+  color: white; /* Или другой цвет */
+  font-weight: 700;
+}
+
+/* Изменить текст */
+.pnotify-text {
+  color: var(--primary-light-gray); /* Свой цвет текста */
+  font-size: 0.9em;
+}
+
+/* Настройка общих переменных, если PNotify их использует (проверяйте в PNotify.css) */
+:root {
+  --pnotify-border-radius: 8px;
+  --pnotify-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
 
 
