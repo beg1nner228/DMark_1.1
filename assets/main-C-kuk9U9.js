@@ -27,7 +27,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         </div>
           <div class="folder-preview-icons"></div>
     </div>
-  `).join("");Xt.innerHTML=we}function Pi(W){(W.target.nodeName==="DIV"||W.target==="SPAN"||W.target==="IMG")&&Si.notice({title:oi.t("notifications.errorTitle"),text:oi.t("notifications.error"),delay:2e3})}Xt.addEventListener("click",Pi);Hi();const Li="/DMark_1.1/assets/brain-3Se0hNIi.svg",ji="/DMark_1.1/assets/link-dec-DkqOYeUK.svg",Ai=document.querySelector(".bookmarks-list"),Yt=JSON.parse(localStorage.getItem("dashMarkHistory"));function ai(W){const we=W.map(b=>`
+  `).join("");Xt.innerHTML=we}function Pi(W){(W.target.nodeName==="DIV"||W.target==="SPAN"||W.target==="IMG")&&Si.notice({title:oi.t("notifications.errorTitle"),text:oi.t("notifications.error"),delay:2e3})}Xt.addEventListener("click",Pi);Hi();const Li="/DMark_1.1/assets/brain-3Se0hNIi.svg",ji="/DMark_1.1/assets/link-dec-DkqOYeUK.svg",Ai=document.querySelector(".bookmarks-list"),Yt=JSON.parse(localStorage.getItem("dashMarkHistory")||"[]");function ai(W){const we=W.map(b=>`
         <li class="bookmark-item">
           <div class="bookmark-info">
             <div class="bookmark-color-indicator" id="${b.id}" ></div>
