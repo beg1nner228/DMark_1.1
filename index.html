@@ -4,7 +4,21 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/DMark_1.1/dmark_favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DMark - Dashboard</title>
+    <!-- <meta name="description" content="DMark - это открытый и полностью настраиваемый дашборд, который вы можете использовать как стартовую страницу в браузере. Организуйте свои закладки, быстрый доступ и поиск с удобными настройками темы и акцентного цвета.">    
+    <meta property="og:description" content="An open-source, customizable start page to boost your productivity. Organize bookmarks, search, and personalize your browsing experience.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://https://beg1nner228.github.io/DMark_1.1/"> 
+    <meta property="og:image" content="https://yourusername.github.io/your-repo-name/path/to/screenshot.png"> <meta property="og:image:alt" content="DMark Dashboard Interface">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DMark - Customizable Personal Browser Dashboard">
+    <meta name="twitter:description" content="An open-source, customizable start page to boost your productivity. Organize bookmarks, search, and personalize your browsing experience.">
+    <meta name="twitter:image" content="https://yourusername.github.io/your-repo-name/path/to/screenshot.png"> <meta name="twitter:creator" content="@yourtwitterhandle">         <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    /> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
@@ -16,23 +30,31 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/DMark_1.1/assets/main-wEFSce_o.js"></script>
-    <link rel="modulepreload" crossorigin href="/DMark_1.1/assets/history-BLTPxMQm.js">
-    <link rel="stylesheet" crossorigin href="/DMark_1.1/assets/history-CJ8DDfHh.css">
-    <link rel="stylesheet" crossorigin href="/DMark_1.1/assets/main-Bxvh0hy5.css">
+    <script type="module" crossorigin src="/DMark_1.1/assets/main-DAkQC8Se.js"></script>
+    <link rel="modulepreload" crossorigin href="/DMark_1.1/assets/settings-D-e4Kz-y.js">
+    <link rel="stylesheet" crossorigin href="/DMark_1.1/assets/settings-DwI7AO-y.css">
+    <link rel="stylesheet" crossorigin href="/DMark_1.1/assets/main-Cl3Z02sU.css">
   </head>
   <body>
     <div class="app-container">
       <aside class="sidebar">
         <div class="sidebar-header">
           <a href="./index.html" class="header-logo-link">
-            <img src="/DMark_1.1/dmark_favicon.svg" alt="DMark Logo" class="sidebar-logo" />
+            <img
+              src="/DMark_1.1/dmark_favicon.svg"
+              alt="DMark Logo"
+              class="sidebar-logo"
+            />
             <span>DMark</span>
           </a>
         </div>
 
         <div class="user-profile">
-          <img src="/DMark_1.1/assets/anonym-CZ4cwFDI.svg" alt="User Avatar" class="user-avatar" />
+          <img
+            src="/DMark_1.1/assets/anonym-CZ4cwFDI.svg"
+            alt="User Avatar"
+            class="user-avatar"
+          />
           <span class="user-name">Anonym228</span>
         </div>
 
@@ -44,7 +66,11 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="./bookmark.html" class="nav-link" data-i18n="nav.bookmarks">
+              <a
+                href="./bookmark.html"
+                class="nav-link"
+                data-i18n="nav.bookmarks"
+              >
                 <span>All Bookmarks</span>
               </a>
             </li>
@@ -55,7 +81,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="#" class="nav-link js-open-settings-btn">
                 <img src="/DMark_1.1/assets/setting-CjIZKw8V.svg" alt="Settings Icon" />
                 <span data-i18n="sidebar.settings">Settings</span>
               </a>
@@ -71,34 +97,51 @@
       <div class="main-content">
         <header class="top-header">
           <div class="search-bar">
-            <img src="/DMark_1.1/assets/search-CNRA1XcB.svg" alt="Search Icon" class="search-icon" />
+            <img
+              src="/DMark_1.1/assets/search-CNRA1XcB.svg"
+              alt="Search Icon"
+              class="search-icon"
+            />
             <input type="text" placeholder="Search" class="search-input" />
           </div>
           <div class="header-right-controls">
             <div class="header-theme">
-                <button
-                  id="theme-toggle"
-                  class="theme-toggle"
-                  aria-label="Переключить тему"
-                >
-                    <img src="/DMark_1.1/assets/sun-BDwAIx65.svg" alt="sun">
-                </button>
+              <button
+                id="theme-toggle"
+                class="theme-toggle"
+                aria-label="Переключить тему"
+              >
+                <img src="/DMark_1.1/assets/sun-BDwAIx65.svg" alt="sun" />
+              </button>
             </div>
             <div class="chooseLanguage chooseLanguageJS">
-              <button class="lang-switch-btn english_langJS" data-lang="en">EN</button>
-              <button class="lang-switch-btn ukrainian_langJS" data-lang="uk">UK</button>
-              <button class="lang-switch-btn russian_langJS" data-lang="ru">RU</button>
+              <button class="lang-switch-btn english_langJS" data-lang="en">
+                EN
+              </button>
+              <button class="lang-switch-btn ukrainian_langJS" data-lang="uk">
+                UK
+              </button>
+              <button class="lang-switch-btn russian_langJS" data-lang="ru">
+                RU
+              </button>
             </div>
-            </div>
+          </div>
         </header>
 
         <main class="dashboard-main">
           <section class="dashboard-section quick-access-section">
-            <h2 data-i18n="main.access">Quick Access</h2>
+            <h2 data-i18n="main.recentlyAdded">Recently Added</h2>
             <div class="folders-grid">
-              <div class="folder-card" style="--folder-color: var(--accent-purple);">
+              <div
+                class="folder-card"
+                style="--folder-color: var(--accent-purple)"
+              >
                 <div class="folder-header">
-                  <img src="/DMark_1.1/assets/folder-DogtCluV.svg" alt="Dev Tools Icon" class="folder-icon" />
+                  <img
+                    src="/DMark_1.1/assets/folder-DogtCluV.svg"
+                    alt="Dev Tools Icon"
+                    class="folder-icon"
+                  />
                   <span class="folder-name">Dev Tools</span>
                 </div>
                 <div class="folder-preview-icons">
@@ -108,9 +151,16 @@
                   <img src="/DMark_1.1/assets/plus-DIT7Ct40.svg" alt="Add" class="add-icon" />
                 </div>
               </div>
-              <div class="folder-card" style="--folder-color: var(--accent-orange);">
+              <div
+                class="folder-card"
+                style="--folder-color: var(--accent-orange)"
+              >
                 <div class="folder-header">
-                  <img src="/DMark_1.1/assets/folder-DogtCluV.svg" alt="Work Icon" class="folder-icon" />
+                  <img
+                    src="/DMark_1.1/assets/folder-DogtCluV.svg"
+                    alt="Work Icon"
+                    class="folder-icon"
+                  />
                   <span class="folder-name">Work</span>
                 </div>
                 <div class="folder-preview-icons">
@@ -121,9 +171,16 @@
                 </div>
               </div>
               <!--  -->
-              <div class="folder-card" style="--folder-color: var(--accent-blue);">
+              <div
+                class="folder-card"
+                style="--folder-color: var(--accent-blue)"
+              >
                 <div class="folder-header">
-                  <img src="/DMark_1.1/assets/folder-DogtCluV.svg" alt="Ideas Icon" class="folder-icon" />
+                  <img
+                    src="/DMark_1.1/assets/folder-DogtCluV.svg"
+                    alt="Ideas Icon"
+                    class="folder-icon"
+                  />
                   <span class="folder-name">Ideas</span>
                 </div>
                 <div class="folder-preview-icons">
@@ -134,9 +191,16 @@
                 </div>
               </div>
               <!--  -->
-              <div class="folder-card" style="--folder-color: var(--accent-blue);">
+              <div
+                class="folder-card"
+                style="--folder-color: var(--accent-blue)"
+              >
                 <div class="folder-header">
-                  <img src="/DMark_1.1/assets/folder-DogtCluV.svg" alt="Ideas Icon" class="folder-icon" />
+                  <img
+                    src="/DMark_1.1/assets/folder-DogtCluV.svg"
+                    alt="Ideas Icon"
+                    class="folder-icon"
+                  />
                   <span class="folder-name">Vacation</span>
                 </div>
                 <div class="folder-preview-icons">
@@ -145,11 +209,18 @@
                   <img src="/DMark_1.1/assets/dashboard-test-CwUSvyjG.svg" alt="Notion" />
                   <img src="/DMark_1.1/assets/plus-DIT7Ct40.svg" alt="Add" class="add-icon" />
                 </div>
-              </div>   
+              </div>
               <!--  -->
-              <div class="folder-card" style="--folder-color: var(--accent-blue);">
+              <div
+                class="folder-card"
+                style="--folder-color: var(--accent-blue)"
+              >
                 <div class="folder-header">
-                  <img src="/DMark_1.1/assets/folder-DogtCluV.svg" alt="Ideas Icon" class="folder-icon" />
+                  <img
+                    src="/DMark_1.1/assets/folder-DogtCluV.svg"
+                    alt="Ideas Icon"
+                    class="folder-icon"
+                  />
                   <span class="folder-name">School</span>
                 </div>
                 <div class="folder-preview-icons">
@@ -158,7 +229,7 @@
                   <img src="/DMark_1.1/assets/dashboard-test-CwUSvyjG.svg" alt="Notion" />
                   <img src="/DMark_1.1/assets/plus-DIT7Ct40.svg" alt="Add" class="add-icon" />
                 </div>
-              </div>              
+              </div>
             </div>
           </section>
 
@@ -167,38 +238,65 @@
             <ul class="bookmarks-list">
               <li class="bookmark-item">
                 <div class="bookmark-info">
-                  <div class="bookmark-color-indicator" style="background-color: var(--accent-blue);"></div>
-                  <img src="./src/images/link_icon.svg" alt="Link Icon" class="bookmark-favicon" />
+                  <div
+                    class="bookmark-color-indicator"
+                    style="background-color: var(--accent-blue)"
+                  ></div>
+                  <img
+                    src="./src/images/link_icon.svg"
+                    alt="Link Icon"
+                    class="bookmark-favicon"
+                  />
                   <span class="bookmark-title">Generative AI Guide</span>
                 </div>
                 <div class="bookmark-actions">
-                  <img src="./src/images/external_link_icon.svg" alt="External Link" class="action-icon" />
-                  <img src="./src/images/edit_icon.svg" alt="Edit" class="action-icon" />
-                  <img src="./src/images/delete_icon.svg" alt="Delete" class="action-icon" />
+                  <img
+                    src="/DMark_1.1/assets/brain-3Se0hNIi.svg"
+                    alt="External Link"
+                    class="action-icon"
+                  />
                 </div>
               </li>
               <li class="bookmark-item">
                 <div class="bookmark-info">
-                  <div class="bookmark-color-indicator" style="background-color: var(--accent-green);"></div>
-                  <img src="./src/images/link_icon.svg" alt="Link Icon" class="bookmark-favicon" />
+                  <div
+                    class="bookmark-color-indicator"
+                    style="background-color: var(--accent-green)"
+                  ></div>
+                  <img
+                    src="./src/images/link_icon.svg"
+                    alt="Link Icon"
+                    class="bookmark-favicon"
+                  />
                   <span class="bookmark-title">New CSS Grid Tutorial</span>
                 </div>
                 <div class="bookmark-actions">
-                  <img src="./src/images/external_link_icon.svg" alt="External Link" class="action-icon" />
-                  <img src="./src/images/edit_icon.svg" alt="Edit" class="action-icon" />
-                  <img src="./src/images/delete_icon.svg" alt="Delete" class="action-icon" />
+                  <img
+                    src="/DMark_1.1/assets/brain-3Se0hNIi.svg"
+                    alt="External Link"
+                    class="action-icon"
+                  />
                 </div>
               </li>
               <li class="bookmark-item">
                 <div class="bookmark-info">
-                  <div class="bookmark-color-indicator" style="background-color: var(--accent-red);"></div>
-                  <img src="./src/images/link_icon.svg" alt="Link Icon" class="bookmark-favicon" />
+                  <div
+                    class="bookmark-color-indicator"
+                    style="background-color: var(--accent-red)"
+                  ></div>
+                  <img
+                    src="./src/images/link_icon.svg"
+                    alt="Link Icon"
+                    class="bookmark-favicon"
+                  />
                   <span class="bookmark-title">Project ChronoForge Repo</span>
                 </div>
                 <div class="bookmark-actions">
-                  <img src="./src/images/external_link_icon.svg" alt="External Link" class="action-icon" />
-                  <img src="./src/images/edit_icon.svg" alt="Edit" class="action-icon" />
-                  <img src="./src/images/delete_icon.svg" alt="Delete" class="action-icon" />
+                  <img
+                    src="/DMark_1.1/assets/brain-3Se0hNIi.svg"
+                    alt="External Link"
+                    class="action-icon"
+                  />
                 </div>
               </li>
             </ul>
@@ -212,20 +310,250 @@
       </div>
     </div>
 
-      <div class="history-modal-backdrop js-history-modal-backdrop">
+    <!-- history modal -->
+
+    <div class="history-modal-backdrop js-history-modal-backdrop">
       <div class="history-modal-content">
-          <button type="button" class="close-btn js-close-history-modal-btn">
-              &times;
-          </button>
-          <h2 class="history-modal-title">История Просмотров</h2>
-          <div class="history-search-container">
-              <input type="text" class="history-search-input js-history-search-input" placeholder="Поиск в истории...">
-          </div>
-          <ul class="history-list js-history-list">
-              </ul>
-          <p class="no-history-message js-no-history-message" style="display: none;">История пуста или ничего не найдено.</p>
+        <button type="button" class="close-btn js-close-history-modal-btn">
+          &times;
+        </button>
+        <h2 class="history-modal-title" data-i18n="modal.history.title">История Просмотров</h2>
+        <div class="history-search-container">
+          <input
+            type="text"
+            class="history-search-input js-history-search-input"
+            placeholder="Поиск в истории..."
+          />
+        </div>
+        <ul class="history-list js-history-list"></ul>
+        <p
+          data-i18n="modal.history.notfound"
+          class="no-history-message js-no-history-message"
+          style="display: none"
+        >
+          История пуста или ничего не найдено.
+        </p>
       </div>
+    </div>
+
+    <!-- settings modal -->
+
+<div class="settings-modal-backdrop js-settings-modal-backdrop">
+  <div class="settings-modal-content">
+    <div class="settings-header">
+      <h2 class="settings-title" data-i18n="modal.settings.title">Settings</h2>
+      <button
+        type="button"
+        class="settings-close-btn js-settings-close-btn"
+          label="Close Settings"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18 6L6 18"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M6 6L18 18"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <div class="settings-body">
+      <nav class="settings-sidebar">
+        <ul class="settings-nav-list">
+          <li>
+            <a
+              href="#"
+              class="settings-nav-item active"
+              data-section="general"
+              data-i18n="modal.settings.nav.general"
+              >General</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="settings-nav-item"
+              data-section="appearance"
+              data-i18n="modal.settings.nav.appearance"
+              >Appearance</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="settings-nav-item"
+              data-section="data-management"
+              data-i18n="modal.settings.nav.dataManagement"
+              >Data Management</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="settings-nav-item"
+              data-section="about"
+              data-i18n="modal.settings.nav.about"
+              >About</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="settings-main-content">
+        <section class="settings-section active" id="settings-general">
+          <h3 data-i18n="modal.settings.general.title">General Settings</h3>
+          <div class="setting-item">
+            <label for="startPage" data-i18n="modal.settings.general.startPageLabel"
+              >Default Start Page:</label
+            >
+            <select id="startPage" name="startPage">
+              <option value="dashboard" data-i18n="modal.settings.general.startPageOptions.dashboard">
+                Dashboard
+              </option>
+              <option value="last-session" data-i18n="modal.settings.general.startPageOptions.lastSession">
+                Last Session
+              </option>
+              <option value="new-tab" data-i18n="modal.settings.general.startPageOptions.startPage">
+                Start Page
+              </option>
+            </select>
+          </div>
+          <div class="setting-item">
+            <label for="searchEngine" data-i18n="modal.settings.general.searchEngineLabel"
+              >Default Search Engine:</label
+            >
+            <select id="searchEngine" name="searchEngine">
+              <option value="google" data-i18n="modal.settings.general.searchEngineOptions.google">Google</option>
+              <option value="duckduckgo" data-i18n="modal.settings.general.searchEngineOptions.duckduckgo">DuckDuckGo</option>
+              <option value="bing" data-i18n="modal.settings.general.searchEngineOptions.bing">Bing</option>
+              <option value="yandex" data-i18n="modal.settings.general.searchEngineOptions.yandex">Yandex</option>
+              <option value="firefox" data-i18n="modal.settings.general.searchEngineOptions.firefox">Firefox</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="settings-section" id="settings-appearance">
+          <h3 data-i18n="modal.settings.appearance.title">Appearance</h3>
+          <div class="setting-item">
+            <label for="theme" data-i18n="modal.settings.appearance.themeLabel">Theme:</label>
+            <select id="theme" name="theme">
+              <option value="light" data-i18n="modal.settings.appearance.themeOptions.light">Light</option>
+              <option value="dark" data-i18n="modal.settings.appearance.themeOptions.dark">Dark</option>
+              <option value="system" data-i18n="modal.settings.appearance.themeOptions.system">System Default</option>
+            </select>
+          </div>
+          <div class="setting-item">
+            <label for="fontSize" data-i18n="modal.settings.appearance.fontSizeLabel">Font Size:</label>
+            <input
+              type="range"
+              id="fontSize"
+              name="fontSize"
+              min="12"
+              max="18"
+              value="16"
+            />
+            <span id="fontSizeValue">16px</span>
+          </div>
+          <div class="setting-item">
+            <label for="accentColor" data-i18n="modal.settings.appearance.accentColorLabel"
+              >Accent Color:</label
+            >
+            <input
+              type="color"
+              id="accentColor"
+              name="accentColor"
+              value="#5a67d8"
+            />
+          </div>
+        </section>
+
+        <section class="settings-section" id="settings-data-management">
+          <h3 data-i18n="modal.settings.dataManagement.title">Data Management</h3>
+          <div class="setting-item">
+            <p data-i18n="modal.settings.dataManagement.exportDescription">
+              Export your bookmarks and settings. (is not accessible yet)
+            </p>
+            <button class="action-btn export-btn" data-i18n="modal.settings.dataManagement.exportBtn">
+              Export Data
+            </button>
+          </div>
+          <div class="setting-item">
+            <p data-i18n="modal.settings.dataManagement.importDescription">
+              Import bookmarks and settings from a file. (is not accessible
+              yet)
+            </p>
+            <input type="file" id="importFile" accept=".json" />
+            <button class="action-btn import-btn" disabled data-i18n="modal.settings.dataManagement.importBtn">
+              Import Data
+            </button>
+          </div>
+          <div class="setting-item danger-zone">
+            <p data-i18n="modal.settings.dataManagement.clearHistoryDescription">Clear all browsing history.</p>
+            <button
+              class="action-btn danger-btn clear-history-btn js-clear-history-btn"
+              data-i18n="modal.settings.dataManagement.clearHistoryBtn"
+            >
+              Clear History
+            </button>
+          </div>
+          <div class="setting-item danger-zone">
+            <p data-i18n="modal.settings.dataManagement.resetAllDescription">Reset all settings and bookmarks to default.</p>
+            <button class="action-btn danger-btn reset-btn" data-i18n="modal.settings.dataManagement.resetAllBtn">
+              Reset All
+            </button>
+          </div>
+        </section>
+
+        <section class="settings-section" id="settings-about">
+          <h3 data-i18n="modal.settings.about.title">About</h3>
+          <p data-i18n="modal.settings.about.version">DashMark v2.2.0</p>
+          <p data-i18n="modal.settings.about.developer">Developed by @Blazequiz</p>
+          <p>
+            <a href="#" target="_blank" rel="noopener noreferrer" data-i18n="modal.settings.about.privacyPolicy"
+              >Privacy Policy</a
+            >
+            |
+            <a href="#" target="_blank" rel="noopener noreferrer" data-i18n="modal.settings.about.termsOfService"
+              >Terms of Service</a
+            >
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <div class="settings-footer">
+      <button
+        type="button"
+        class="action-btn primary-btn js-settings-save-btn"
+        data-i18n="modal.settings.footer.saveChangesBtn"
+      >
+        Save Changes
+      </button>
+      <button
+        type="button"
+        class="action-btn secondary-btn js-settings-cancel-btn"
+        data-i18n="modal.settings.footer.cancelBtn"
+      >
+        Cancel
+      </button>
+    </div>
   </div>
-  
-    </body>
+</div>
+
+  </body>
 </html>

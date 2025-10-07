@@ -17,10 +17,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./src/style.css" />
-    <script type="module" crossorigin src="/DMark_1.1/assets/bookmarks-DaIWY1Vl.js"></script>
-    <link rel="modulepreload" crossorigin href="/DMark_1.1/assets/history-BLTPxMQm.js">
-    <link rel="stylesheet" crossorigin href="/DMark_1.1/assets/history-CJ8DDfHh.css">
-    <link rel="stylesheet" crossorigin href="/DMark_1.1/assets/bookmarks-77WCQfaJ.css">
+    <script type="module" crossorigin src="/DMark_1.1/assets/bookmarks-Bac13KAV.js"></script>
+    <link rel="modulepreload" crossorigin href="/DMark_1.1/assets/settings-D-e4Kz-y.js">
+    <link rel="stylesheet" crossorigin href="/DMark_1.1/assets/settings-DwI7AO-y.css">
+    <link rel="stylesheet" crossorigin href="/DMark_1.1/assets/bookmarks-CrOH2adL.css">
   </head>
   <body>
     <div class="app-container">
@@ -68,7 +68,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="#" class="nav-link js-open-settings-btn">
                 <img src="/DMark_1.1/assets/setting-CjIZKw8V.svg" alt="Settings Icon" />
                 <span data-i18n="sidebar.settings">Settings</span>
               </a>
@@ -254,7 +254,7 @@
         <button type="button" class="close-btn js-close-history-modal-btn">
           &times;
         </button>
-        <h2 class="history-modal-title">История Просмотров</h2>
+        <h2 class="history-modal-title" data-i18n="modal.history.title">История Просмотров</h2>
         <div class="history-search-container">
           <input
             type="text"
@@ -264,6 +264,7 @@
         </div>
         <ul class="history-list js-history-list"></ul>
         <p
+          data-i18n="modal.history.notfound"
           class="no-history-message js-no-history-message"
           style="display: none"
         >
@@ -271,6 +272,224 @@
         </p>
       </div>
     </div>
+    <!-- settings modal -->
+
+<div class="settings-modal-backdrop js-settings-modal-backdrop">
+  <div class="settings-modal-content">
+    <div class="settings-header">
+      <h2 class="settings-title" data-i18n="modal.settings.title">Settings</h2>
+      <button
+        type="button"
+        class="settings-close-btn js-settings-close-btn"
+          label="Close Settings"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18 6L6 18"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M6 6L18 18"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <div class="settings-body">
+      <nav class="settings-sidebar">
+        <ul class="settings-nav-list">
+          <li>
+            <a
+              href="#"
+              class="settings-nav-item active"
+              data-section="general"
+              data-i18n="modal.settings.nav.general"
+              >General</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="settings-nav-item"
+              data-section="appearance"
+              data-i18n="modal.settings.nav.appearance"
+              >Appearance</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="settings-nav-item"
+              data-section="data-management"
+              data-i18n="modal.settings.nav.dataManagement"
+              >Data Management</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="settings-nav-item"
+              data-section="about"
+              data-i18n="modal.settings.nav.about"
+              >About</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="settings-main-content">
+        <section class="settings-section active" id="settings-general">
+          <h3 data-i18n="modal.settings.general.title">General Settings</h3>
+          <div class="setting-item">
+            <label for="startPage" data-i18n="modal.settings.general.startPageLabel"
+              >Default Start Page:</label
+            >
+            <select id="startPage" name="startPage">
+              <option value="dashboard" data-i18n="modal.settings.general.startPageOptions.dashboard">
+                Dashboard
+              </option>
+              <option value="last-session" data-i18n="modal.settings.general.startPageOptions.lastSession">
+                Last Session
+              </option>
+              <option value="new-tab" data-i18n="modal.settings.general.startPageOptions.startPage">
+                Start Page
+              </option>
+            </select>
+          </div>
+          <div class="setting-item">
+            <label for="searchEngine" data-i18n="modal.settings.general.searchEngineLabel"
+              >Default Search Engine:</label
+            >
+            <select id="searchEngine" name="searchEngine">
+              <option value="google" data-i18n="modal.settings.general.searchEngineOptions.google">Google</option>
+              <option value="duckduckgo" data-i18n="modal.settings.general.searchEngineOptions.duckduckgo">DuckDuckGo</option>
+              <option value="bing" data-i18n="modal.settings.general.searchEngineOptions.bing">Bing</option>
+              <option value="yandex" data-i18n="modal.settings.general.searchEngineOptions.yandex">Yandex</option>
+              <option value="firefox" data-i18n="modal.settings.general.searchEngineOptions.firefox">Firefox</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="settings-section" id="settings-appearance">
+          <h3 data-i18n="modal.settings.appearance.title">Appearance</h3>
+          <div class="setting-item">
+            <label for="theme" data-i18n="modal.settings.appearance.themeLabel">Theme:</label>
+            <select id="theme" name="theme">
+              <option value="light" data-i18n="modal.settings.appearance.themeOptions.light">Light</option>
+              <option value="dark" data-i18n="modal.settings.appearance.themeOptions.dark">Dark</option>
+              <option value="system" data-i18n="modal.settings.appearance.themeOptions.system">System Default</option>
+            </select>
+          </div>
+          <div class="setting-item">
+            <label for="fontSize" data-i18n="modal.settings.appearance.fontSizeLabel">Font Size:</label>
+            <input
+              type="range"
+              id="fontSize"
+              name="fontSize"
+              min="12"
+              max="18"
+              value="16"
+            />
+            <span id="fontSizeValue">16px</span>
+          </div>
+          <div class="setting-item">
+            <label for="accentColor" data-i18n="modal.settings.appearance.accentColorLabel"
+              >Accent Color:</label
+            >
+            <input
+              type="color"
+              id="accentColor"
+              name="accentColor"
+              value="#5a67d8"
+            />
+          </div>
+        </section>
+
+        <section class="settings-section" id="settings-data-management">
+          <h3 data-i18n="modal.settings.dataManagement.title">Data Management</h3>
+          <div class="setting-item">
+            <p data-i18n="modal.settings.dataManagement.exportDescription">
+              Export your bookmarks and settings. (is not accessible yet)
+            </p>
+            <button class="action-btn export-btn" data-i18n="modal.settings.dataManagement.exportBtn">
+              Export Data
+            </button>
+          </div>
+          <div class="setting-item">
+            <p data-i18n="modal.settings.dataManagement.importDescription">
+              Import bookmarks and settings from a file. (is not accessible
+              yet)
+            </p>
+            <input type="file" id="importFile" accept=".json" />
+            <button class="action-btn import-btn" disabled data-i18n="modal.settings.dataManagement.importBtn">
+              Import Data
+            </button>
+          </div>
+          <div class="setting-item danger-zone">
+            <p data-i18n="modal.settings.dataManagement.clearHistoryDescription">Clear all browsing history.</p>
+            <button
+              class="action-btn danger-btn clear-history-btn js-clear-history-btn"
+              data-i18n="modal.settings.dataManagement.clearHistoryBtn"
+            >
+              Clear History
+            </button>
+          </div>
+          <div class="setting-item danger-zone">
+            <p data-i18n="modal.settings.dataManagement.resetAllDescription">Reset all settings and bookmarks to default.</p>
+            <button class="action-btn danger-btn reset-btn" data-i18n="modal.settings.dataManagement.resetAllBtn">
+              Reset All
+            </button>
+          </div>
+        </section>
+
+        <section class="settings-section" id="settings-about">
+          <h3 data-i18n="modal.settings.about.title">About</h3>
+          <p data-i18n="modal.settings.about.version">DashMark v2.2.0</p>
+          <p data-i18n="modal.settings.about.developer">Developed by @Blazequiz</p>
+          <p>
+            <a href="#" target="_blank" rel="noopener noreferrer" data-i18n="modal.settings.about.privacyPolicy"
+              >Privacy Policy</a
+            >
+            |
+            <a href="#" target="_blank" rel="noopener noreferrer" data-i18n="modal.settings.about.termsOfService"
+              >Terms of Service</a
+            >
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <div class="settings-footer">
+      <button
+        type="button"
+        class="action-btn primary-btn js-settings-save-btn"
+        data-i18n="modal.settings.footer.saveChangesBtn"
+      >
+        Save Changes
+      </button>
+      <button
+        type="button"
+        class="action-btn secondary-btn js-settings-cancel-btn"
+        data-i18n="modal.settings.footer.cancelBtn"
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
 
   </body>
 </html>
