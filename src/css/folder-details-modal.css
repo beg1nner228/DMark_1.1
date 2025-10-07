@@ -1,6 +1,3 @@
-/* src/style.css */
-
-/* ... (Ваши существующие стили) ... */
 
 /* --- Стили для модального окна деталей папки --- */
 .folder-details-backdrop {
@@ -30,7 +27,7 @@
 }
 
 .folder-details-modal {
-    background-color: var(--bg-medium); /* Фон модалки */
+    background-color: var(--secondary-bg); /* Фон модалки */
     border-radius: 12px;
     padding: 30px;
     width: 90%;

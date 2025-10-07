@@ -8,8 +8,8 @@ import './JS/bookmarks/header.js';
 import './JS/recently-used-slider.js'
 import './JS/theme.js';
 import './JS/history.js';
-
-
+import './JS/recent-links.js';
+import './JS/settings.js';
 
 
 

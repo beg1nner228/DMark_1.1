@@ -3,54 +3,69 @@ import sun from "../images/sun.svg";
 
 const body = document.body;
 const toggleBtn = document.querySelector(".theme-toggle");
-const img = toggleBtn ? toggleBtn.querySelector("img") : null;
+const img = toggleBtn?.querySelector("img");
 
-// 🔹 Хелпер: безопасно применяем стиль, если элемент существует
-function setBackground(selector, color) {
-  const el = document.querySelector(selector);
-  if (el) {
-    el.style.background = color;
-  }
+// Новый элемент: select из настроек
+const themeSelect = document.getElementById('theme'); // Убедитесь, что ID совпадает
+
+// Общий ключ для localStorage
+const THEME_STORAGE_KEY = 'userThemePreference'; // Используем ключ из main.js
+
+/**
+ * Применяет выбранную тему (light, dark, system) к документу и обновляет иконку.
+ * @param {string} theme - 'light', 'dark' или 'system'.
+ * @param {boolean} [saveToStorage=true] - Сохранять ли тему в localStorage.
+ */
+export function applyAndSaveTheme(theme, saveToStorage = true) {
+    document.body.classList.remove('force-light-theme', 'force-dark-theme');
+
+    let actualTheme = theme;
+    if (theme === 'system') {
+        actualTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    if (actualTheme === "dark") {
+        body.classList.add("force-dark-theme");
+        if (img) img.src = moon;
+    } else { // light or system resolves to light
+        body.classList.remove("force-dark-theme");
+        if (img) img.src = sun;
+    }
+
+    // Синхронизируем select в настройках, если он есть
+    if (themeSelect) {
+        themeSelect.value = theme;
+    }
+
+    if (saveToStorage) {
+        localStorage.setItem(THEME_STORAGE_KEY, theme);
+    }
 }
 
-// 🔹 Функция: применяем тему ко всей странице
-function applyTheme(theme) {
-  if (theme === "dark") {
-    body.classList.add("dark");
-    body.style.background = "var(--bg-dark)";
-    if (img) img.src = moon;
+// При загрузке — взять сохранённую тему и применить ее
+const savedTheme = localStorage.getItem(THEME_STORAGE_KEY) || 'system';
+applyAndSaveTheme(savedTheme, false); // false, чтобы не перезаписывать при загрузке
 
-    setBackground(".top-header", "var(--bg-dark)");
-    setBackground(".search-bar", "var(--bg-dark)");
-    setBackground(".header-theme", "var(--bg-dark)");
-    setBackground(".chooseLanguage", "var(--bg-dark)");
-    setBackground(".folders-search-input", "var(--bg-dark)");
-  } else {
-    body.classList.remove("dark");
-    body.style.background = "#fff";
-    if (img) img.src = sun;
-
-    setBackground(".top-header", "#fff");
-    setBackground(".search-bar", "#fff");
-    setBackground(".header-theme", "#fff");
-    setBackground(".chooseLanguage", "#fff");
-    setBackground(".folders-search-input", "#fff");
-  }
-
-  localStorage.setItem("theme", theme);
-}
-
-// 🔹 Инициализация (берём из localStorage или дефолт — светлая)
-const savedTheme = localStorage.getItem("theme") || "light";
-applyTheme(savedTheme);
-
-// 🔹 Слушатель для переключателя
-if (toggleBtn) {
-  toggleBtn.addEventListener("click", () => {
+// Обработчик переключения темы (кнопка солнце/луна)
+toggleBtn?.addEventListener("click", () => {
     toggleBtn.classList.add("rotate");
     setTimeout(() => toggleBtn.classList.remove("rotate"), 500);
 
-    const newTheme = body.classList.contains("dark") ? "light" : "dark";
-    applyTheme(newTheme);
-  });
-}
+    // Определяем новую тему для переключения (переключение между light и dark)
+    // Если текущая тема 'system', переключаемся на 'dark'
+    let currentPreference = localStorage.getItem(THEME_STORAGE_KEY);
+    let newTheme;
+    if (currentPreference === 'dark' || (currentPreference === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        newTheme = 'light';
+    } else {
+        newTheme = 'dark';
+    }
+
+    applyAndSaveTheme(newTheme);
+});
+
+// Обработчик изменения темы через <select> в настройках
+themeSelect?.addEventListener('change', function() {
+    const selectedTheme = this.value;
+    applyAndSaveTheme(selectedTheme);
+});

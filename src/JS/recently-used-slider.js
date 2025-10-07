@@ -28,7 +28,7 @@ const defaultData = [
 
 
 
-function getRandomColor() {
+export function getRandomColor() {
 
   const r = getRandomNum();
   const g = getRandomNum();

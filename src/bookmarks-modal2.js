@@ -10,6 +10,7 @@ import "./css/folder-details-modal.css";
 import "./JS/folder-details-modal.js";
 import './css/history&settings_modals.css';
 import "./JS/history.js";
+import './JS/settings.js';
 
 const data = localStorage.getItem("dashMarkBookmarks");
 const firstBookmark = document.querySelector(".BookmarkTitleJS");

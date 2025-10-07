@@ -195,19 +195,6 @@ body {
     z-index: 100;
 }
 
-/* .search-bar {
-    display: flex;
-    align-items: center;
-    background-color: var(--bg-medium);
-    border-radius: 8px;
-    padding: 8px 15px;
-    flex-grow: 1;
-    max-width: 400px;
-    margin-right: 20px;
-    border: none;
-    outline: none;
-} */
-
 .search-icon {
     width: 20px;
     height: 20px;
@@ -365,8 +352,10 @@ body {
 .folder-icon {
     width: 32px;
     height: 32px;
-    /* Возможно, потребуется инвертировать для темной темы, если иконки светлые */
-    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.folder-icon-filter {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);    
 }
 
 .folder-name {
@@ -489,31 +478,6 @@ body {
 .ai-helper {
     font-size: 0.8em;
     opacity: 0.8;
-}
-
-.pnotify.pnotify-error .pnotify-container {
-  background-color: var(--accent-red); /* Используйте свои переменные */
-  color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Изменить цвет заголовка */
-.pnotify-title {
-  color: white; /* Или другой цвет */
-  font-weight: 700;
-}
-
-/* Изменить текст */
-.pnotify-text {
-  color: var(--primary-light-gray); /* Свой цвет текста */
-  font-size: 0.9em;
-}
-
-/* Настройка общих переменных, если PNotify их использует (проверяйте в PNotify.css) */
-:root {
-  --pnotify-border-radius: 8px;
-  --pnotify-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 

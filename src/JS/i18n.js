@@ -70,7 +70,7 @@ i18next
                         accept: "Confirm"
                     },
                     main: {
-                        access: "Quick Access",
+                        recentlyAdded: "Recently Added",
                         folderTitle: "All Folders"
                     },
                     dashboardSection: {
@@ -89,7 +89,73 @@ i18next
                         error: "This function is not available yet.",
                         success: "Operation completed successfully!",
                         warning: "Please try again later."
-                    }                    
+                    },    
+                    modal: {
+                        history: {
+                            title: "History",
+                            searchPlaceholder: "Search history...",
+                            notfound: "History is empty or nothing was found."
+                        },
+                        settings: {
+                            title: "Settings",
+                            nav: { 
+                                general: "General",
+                                appearance: "Appearance",
+                                dataManagement: "Data Management",
+                                about: "About"
+                            },
+                            general: { 
+                                title: "General Settings",
+                                startPageLabel: "Default Start Page:",
+                                startPageOptions: {
+                                    dashboard: "Dashboard",
+                                    lastSession: "Last Session",
+                                    startPage: "Start Page"
+                                },
+                                searchEngineLabel: "Default Search Engine:",
+                                searchEngineOptions: {
+                                    google: "Google",
+                                    duckduckgo: "DuckDuckGo",
+                                    bing: "Bing",
+                                    yandex: "Yandex",
+                                    firefox: "Firefox"
+                                }
+                            },
+                            appearance: { 
+                                title: "Appearance",
+                                themeLabel: "Theme:",
+                                themeOptions: {
+                                    light: "Light",
+                                    dark: "Dark",
+                                    system: "System Default"
+                                },
+                                fontSizeLabel: "Font Size:",
+                                accentColorLabel: "Accent Color:"
+                            },
+                            dataManagement: { 
+                                title: "Data Management",
+                                exportDescription: "Export your bookmarks and settings. (is not accessible yet)",
+                                exportBtn: "Export Data",
+                                importDescription: "Import bookmarks and settings from a file. (is not accessible yet)",
+                                importBtn: "Import Data",
+                                clearHistoryDescription: "Clear all browsing history.",
+                                clearHistoryBtn: "Clear History",
+                                resetAllDescription: "Reset all settings and bookmarks to default.",
+                                resetAllBtn: "Reset All"
+                            },
+                            about: { 
+                                title: "About",
+                                version: "DashMark v2.2.0",
+                                developer: "Developed by @Blazequiz",
+                                privacyPolicy: "Privacy Policy",
+                                termsOfService: "Terms of Service"
+                            },
+                            footer: { 
+                                saveChangesBtn: "Save Changes",
+                                cancelBtn: "Cancel"
+                            }
+                        }
+                    }
                 } 
             }, 
             uk: {
@@ -107,7 +173,7 @@ i18next
                         accept: "Підтвердити"
                     },
                     main: {
-                        access: "Швидкий Доступ",
+                        recentlyAdded: "Нещодавно Додані",
                         folderTitle: "Всі Папки"                        
                     },
                     dashboardSection: {
@@ -126,7 +192,73 @@ i18next
                         error: "Ця функція поки недоступна.",
                         success: "Операцію виконано успішно!",
                         warning: "Будь ласка, спробуйте пізніше."
-                    }
+                    },
+                    modal: {
+                            history: {
+                                title: "Історія",
+                                searchPlaceholder: "Пошук в історії...",
+                                notfound: "Історія порожня або нічого не знайдено."
+                            },
+                            settings: {
+                                title: "Налаштування",
+                                nav: {
+                                    general: "Загальні",
+                                    appearance: "Зовнішній вигляд",
+                                    dataManagement: "Керування даними",
+                                    about: "Про програму"
+                                },
+                                general: {
+                                    title: "Загальні Налаштування",
+                                    startPageLabel: "Стартова сторінка за замовчуванням:",
+                                    startPageOptions: {
+                                        dashboard: "Панель управління",
+                                        lastSession: "Остання сесія",
+                                        startPage: "Стартова сторінка"
+                                    },
+                                    searchEngineLabel: "Пошукова система за замовчуванням:",
+                                    searchEngineOptions: {
+                                        google: "Google",
+                                        duckduckgo: "DuckDuckGo",
+                                        bing: "Bing",
+                                        yandex: "Яндекс",
+                                        firefox: "Firefox"
+                                    }
+                                },
+                                appearance: {
+                                    title: "Зовнішній вигляд",
+                                    themeLabel: "Тема:",
+                                    themeOptions: {
+                                        light: "Світла",
+                                        dark: "Темна",
+                                        system: "Системна за замовчуванням"
+                                    },
+                                    fontSizeLabel: "Розмір шрифту:",
+                                    accentColorLabel: "Акцентний колір:"
+                                },
+                                dataManagement: {
+                                    title: "Керування даними",
+                                    exportDescription: "Експортуйте ваші закладки та налаштування. (поки що недоступно)",
+                                    exportBtn: "Експортувати дані",
+                                    importDescription: "Імпортуйте закладки та налаштування з файлу. (поки що недоступно)",
+                                    importBtn: "Імпортувати дані",
+                                    clearHistoryDescription: "Очистити всю історію переглядів.",
+                                    clearHistoryBtn: "Очистити історію",
+                                    resetAllDescription: "Скинути всі налаштування та закладки до стандартних.",
+                                    resetAllBtn: "Скинути все"
+                                },
+                                about: {
+                                    title: "Про програму",
+                                    version: "DashMark v2.2.0",
+                                    developer: "Розроблено @Blazequiz",
+                                    privacyPolicy: "Політика конфіденційності",
+                                    termsOfService: "Умови використання"
+                                },
+                                footer: {
+                                    saveChangesBtn: "Зберегти Зміни",
+                                    cancelBtn: "Скасувати"
+                            }
+                        }
+                    }                    
                 } 
             },
             ru: {
@@ -144,7 +276,7 @@ i18next
                         accept: "Потвердить"
                     },
                     main: {
-                        access: "Быстрый Доступ",
+                        recentlyAdded: "Недавно Добавленные",
                         folderTitle: "Все Папки"                        
                     },
                     dashboardSection: {
@@ -163,9 +295,75 @@ i18next
                         error: "Эта функция пока недоступна.",
                         success: "Операция выполнена успешно!",
                         warning: "Попробуйте позже."
-                    }                    
-                } 
-            }            
+                    },
+                    modal: {
+                        history: {
+                            title: "История",
+                            searchPlaceholder: "Поиск в истории...",
+                            notfound: "История пуста или ничего не найдено."
+                        },
+                        settings: {
+                            title: "Настройки",
+                            nav: {
+                                general: "Общие",
+                                appearance: "Внешний вид",
+                                dataManagement: "Управление данными",
+                                about: "О программе"
+                            },
+                            general: {
+                                title: "Общие Настройки",
+                                startPageLabel: "Стартовая страница по умолчанию:",
+                                startPageOptions: {
+                                    dashboard: "Панель управления",
+                                    lastSession: "Последняя сессия",
+                                    startPage: "Стартовая страница"
+                                },
+                                searchEngineLabel: "Поисковая система по умолчанию:",
+                                searchEngineOptions: {
+                                    google: "Google",
+                                    duckduckgo: "DuckDuckGo",
+                                    bing: "Bing",
+                                    yandex: "Яндекс",
+                                    firefox: "Firefox"
+                                }
+                            },
+                            appearance: {
+                                title: "Внешний вид",
+                                themeLabel: "Тема:",
+                                themeOptions: {
+                                    light: "Светлая",
+                                    dark: "Темная",
+                                    system: "Системная по умолчанию"
+                                },
+                                fontSizeLabel: "Размер шрифта:",
+                                accentColorLabel: "Акцентный цвет:"
+                            },
+                            dataManagement: {
+                                title: "Управление данными",
+                                exportDescription: "Экспортируйте ваши закладки и настройки. (пока недоступно)",
+                                exportBtn: "Экспортировать данные",
+                                importDescription: "Импортируйте закладки и настройки из файла. (пока недоступно)",
+                                importBtn: "Импортировать данные",
+                                clearHistoryDescription: "Очистить всю историю просмотров.",
+                                clearHistoryBtn: "Очистить историю",
+                                resetAllDescription: "Сбросить все настройки и закладки до стандартных.",
+                                resetAllBtn: "Сбросить все"
+                            },
+                            about: {
+                                title: "О программе",
+                                version: "DashMark v2.2.0",
+                                developer: "Разработано @Blazequiz",
+                                privacyPolicy: "Политика конфиденциальности",
+                                termsOfService: "Условия использования"
+                            },
+                            footer: {
+                                saveChangesBtn: "Сохранить Изменения",
+                                cancelBtn: "Отмена"
+                            }
+                        }
+                    }
+                }                         
+            }         
         }, 
         fallbackLng: 'en', 
         ns: ['translation'],
