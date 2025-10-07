@@ -1,16 +1,19 @@
+/* src/css/beta_2.0.0.css */
+
 @import './common.css';
 
 /* --- ОБЩИЕ СТИЛИ --- */
 body {
-    font-family: 'Inter', sans-serif; 
-    background-color: var(--bg-dark);
+    font-family: 'Inter', sans-serif;
+    background-color: var(--primary-bg); /* Использовать primary-bg */
     color: var(--text-primary);
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: hidden; /* Предотвращает прокрутку всей страницы */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Добавил переходы для плавной смены темы */
 }
 
-
+/* Скрываем скроллбар для всего приложения */
 body::-webkit-scrollbar {
     display: none;
 }
@@ -34,12 +37,14 @@ body {
 /* --- САЙДБАР --- */
 .sidebar {
     width: var(--sidebar-width);
-    background-color: var(--bg-medium);
+    background-color: var(--secondary-bg); /* Использовать secondary-bg */
     padding: 20px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0; /* Чтобы сайдбар не сжимался */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Плавная смена темы */
 }
 
 .sidebar-header {
@@ -47,11 +52,11 @@ body {
     margin-bottom: 30px;
 }
 
-.header-logo-link {
+.header-logo-link { /* Ваш класс из оригинального HTML */
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: var(--text-primary);
+    color: var(--text-primary); /* Использовать text-primary */
     font-weight: bold;
     font-size: 1.5em;
     gap: 10px;
@@ -67,7 +72,7 @@ body {
     align-items: center;
     gap: 15px;
     padding: 15px 20px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color); /* Использовать border-color */
     margin-bottom: 20px;
 }
 
@@ -81,7 +86,7 @@ body {
 .user-name {
     flex-grow: 1;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--text-primary); /* Использовать text-primary */
 }
 
 .sidebar-nav ul {
@@ -100,7 +105,7 @@ body {
     gap: 15px;
     padding: 12px 20px;
     text-decoration: none;
-    color: var(--text-secondary);
+    color: var(--text-secondary); /* Использовать text-secondary */
     font-weight: 500;
     transition: background-color 0.2s, color 0.2s;
     border-radius: 0 8px 8px 0; /* Скругление только с одной стороны */
@@ -109,28 +114,29 @@ body {
 .nav-link img {
     width: 24px;
     height: 24px;
-    filter: invert(60%) sepia(8%) saturate(151%) hue-rotate(180deg) brightness(92%) contrast(85%); /* Чтобы иконки были серыми */
+    filter: var(--icon-filter-default); /* Использовать переменную */
+    transition: filter 0.2s ease; /* Плавная смена фильтра */
 }
 
 .nav-item.active .nav-link {
     background-color: var(--accent-blue);
-    color: var(--bg-dark);
+    color: var(--text-inverted); /* Использовать text-inverted */
     font-weight: 700;
 }
 
 .nav-item.active .nav-link img {
-    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); /* Белые иконки для активного */
+    filter: var(--icon-filter-active); /* Использовать переменную */
 }
 
 .nav-link:hover {
-    background-color: #2f3442;
-    color: var(--text-primary);
+    background-color: var(--hover-bg); /* Использовать переменную */
+    color: var(--text-primary); /* Использовать text-primary */
 }
 
 .sidebar-footer {
     padding: 20px;
     text-align: center;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color); /* Использовать border-color */
     margin-top: auto; /* Прижимает футер к низу */
 }
 
@@ -147,6 +153,7 @@ body {
     flex-direction: column;
     overflow-y: auto; /* Позволяет прокручивать только основное содержимое */
     padding: 0; /* Отступы от края */
+    transition: background-color 0.3s ease; /* Плавная смена темы */
 }
 
 /* Стилизация скроллбара для main-content */
@@ -154,15 +161,15 @@ body {
     width: 8px;
 }
 .main-content::-webkit-scrollbar-track {
-    background: var(--bg-medium);
+    background: var(--secondary-bg); /* Использовать secondary-bg */
     border-radius: 10px;
 }
 .main-content::-webkit-scrollbar-thumb {
-    background: var(--border-color);
+    background: var(--border-color); /* Использовать border-color */
     border-radius: 10px;
 }
 .main-content::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: var(--text-secondary); /* Установил на text-secondary */
 }
 
 
@@ -175,35 +182,34 @@ body {
     border-bottom: 1px solid var(--border-color); /* Разделитель */
     position: sticky;
     top: 0;
-    background-color: var(--bg-dark);
+    background-color: var(--tertiary-bg); /* Использовать tertiary-bg */
     z-index: 100;
+    transition: background-color 0.3s ease; /* Плавная смена темы */
 }
-
-
 
 .search-icon {
     width: 20px;
     height: 20px;
     margin-right: 10px;
-    filter: invert(40%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(80%) contrast(100%);
+    filter: var(--icon-filter-default); /* Использовать переменную */
 }
 
 .search-input {
     background: none;
     border: none;
     outline: none;
-    color: var(--text-primary);
+    color: var(--text-primary); /* Использовать text-primary */
     width: 100%;
     font-size: 1em;
 }
 
 .search-input:focus {
     border: none;
-    outline: none;    
+    outline: none;
 }
 
 .search-input::placeholder {
-    color: var(--text-secondary);
+    color: var(--text-secondary); /* Использовать text-secondary */
     border: none;
     outline: none;
 }
@@ -216,10 +222,11 @@ body {
 
 /* Стили для переключателя темы (ваш оригинальный класс) */
 .header-theme {
-    background-color: var(--bg-medium);
+    background-color: var(--secondary-bg); /* Использовать secondary-bg */
     border-radius: 8px;
     padding: 5px;
     display: flex;
+    transition: background-color 0.3s ease; /* Плавная смена темы */
 }
 
 .theme-toggle {
@@ -238,22 +245,16 @@ body {
 .chooseLanguage {
     display: flex;
     gap: 0px;
-    background-color: var(--bg-medium);
+    background-color: var(--secondary-bg); /* Использовать secondary-bg */
     border-radius: 8px;
     padding: 5px;
-}
-.chooseLanguage { 
-    display: flex;
-    gap: 0px; 
-    background-color: var(--bg-medium);
-    border-radius: 8px;
-    padding: 5px;
+    transition: background-color 0.3s ease; /* Плавная смена темы */
 }
 
-.lang-switch-btn { 
+.lang-switch-btn {
     background: none;
     border: none;
-    color: var(--text-secondary);
+    color: var(--text-secondary); /* Использовать text-secondary */
     padding: 5px 10px;
     border-radius: 6px;
     cursor: pointer;
@@ -264,12 +265,12 @@ body {
 }
 
 .lang-switch-btn:hover {
-    background-color: #3a3f52;
-    color: var(--text-primary);
+    background-color: var(--hover-bg-secondary); /* Использовать переменную */
+    color: var(--text-primary); /* Использовать text-primary */
 }
 .lang-switch-btn.active { /* Если у вас будет активный язык */
     background-color: var(--accent-blue); /* Используем акцентный синий */
-    color: var(--bg-dark);
+    color: var(--text-inverted); /* Использовать text-inverted */
     font-weight: 600;
 }
 
@@ -285,7 +286,7 @@ body {
 }
 
 .dashboard-section h2 {
-    color: var(--text-primary);
+    color: var(--text-primary); /* Использовать text-primary */
     font-size: 1.5em;
     font-weight: 600;
     margin-bottom: 20px;
@@ -299,7 +300,7 @@ body {
 }
 
 .folder-card {
-    background-color: var(--bg-light);
+    background-color: var(--tertiary-bg); /* Использовать tertiary-bg */
     border-radius: 12px;
     padding: 20px;
     display: flex;
@@ -309,11 +310,12 @@ body {
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, background-color 0.3s ease, box-shadow 0.2s ease; /* Плавная смена темы */
 }
 
 .folder-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Добавил тень при наведении */
 }
 
 /* Индикаторы цвета папок */
@@ -338,16 +340,14 @@ body {
 .folder-icon {
     width: 32px;
     height: 32px;
-}
-
-.folder-icon-filter {
-    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);    
+    filter: var(--folder-icon-filter); /* Использовать переменную */
+    transition: filter 0.3s ease;
 }
 
 .folder-name {
     font-size: 1.1em;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--text-primary); /* Использовать text-primary */
 }
 
 .folder-preview-icons {
@@ -360,11 +360,12 @@ body {
     width: 24px;
     height: 24px;
     opacity: 0.7;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s, filter 0.2s; /* Плавная смена фильтра */
 }
 
 .folder-preview-icons img:hover {
     opacity: 1;
+    filter: var(--icon-filter-hover); /* Использовать переменную */
 }
 
 .folder-preview-icons .add-icon {
@@ -379,7 +380,7 @@ body {
 }
 
 .bookmark-item {
-    background-color: var(--bg-medium);
+    background-color: var(--secondary-bg); /* Использовать secondary-bg */
     border-radius: 8px;
     padding: 15px 20px;
     margin-bottom: 10px;
@@ -390,7 +391,7 @@ body {
 }
 
 .bookmark-item:hover {
-    background-color: #2f3442;
+    background-color: var(--hover-bg); /* Использовать переменную */
 }
 
 .bookmark-info {
@@ -403,17 +404,19 @@ body {
     width: 8px;
     height: 30px;
     border-radius: 4px;
+    background-color: var(--accent-blue); /* Используем акцентный синий по умолчанию, если нет динамического цвета */
 }
 
 .bookmark-favicon {
     width: 24px;
     height: 24px;
-    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    filter: var(--bookmark-favicon-filter); /* Использовать переменную */
+    transition: filter 0.3s ease;
 }
 
 .bookmark-title {
     font-weight: 500;
-    color: var(--text-primary);
+    color: var(--text-primary); /* Использовать text-primary */
 }
 
 .bookmark-actions {
@@ -426,13 +429,13 @@ body {
     height: 20px;
     cursor: pointer;
     opacity: 0.6;
-    transition: opacity 0.2s;
-    filter: invert(60%) sepia(8%) saturate(151%) hue-rotate(180deg) brightness(92%) contrast(85%); /* Серые иконки */
+    transition: opacity 0.2s, filter 0.2s; /* Плавная смена фильтра */
+    filter: var(--icon-filter-default); /* Использовать переменную */
 }
 
 .bookmark-actions .action-icon:hover {
     opacity: 1;
-    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); /* Белые при наведении */
+    filter: var(--icon-filter-hover); /* Использовать переменную */
 }
 
 /* --- AI Assistant FAB --- */
@@ -441,8 +444,8 @@ body {
     bottom: 30px; /* Отступ от низа */
     right: 30px; /* Отступ от правого края */
     width: auto; /* in the next update should be added a new value of width because of ai svg */
-    background-color: var(--accent-blue);
-    color: var(--bg-dark);
+    background-color: var(--accent-blue); /* Использовать accent-blue */
+    color: var(--text-inverted); /* Использовать text-inverted */
     padding: 10px 15px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -458,7 +461,7 @@ body {
 }
 
 .ai-assistant-fab:hover {
-    background-color: #216abf;
+    background-color: var(--accent-blue-hover); /* Использовать accent-blue-hover */
 }
 
 .ai-helper {
@@ -466,29 +469,43 @@ body {
     opacity: 0.8;
 }
 
+/* PNotify стили, использующие переменные из common.css */
 .pnotify.pnotify-error .pnotify-container {
-  background-color: var(--accent-red); /* Используйте свои переменные */
-  color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: var(--pnotify-bg); /* Используйте свои переменные */
+    color: var(--pnotify-text);
+    border-radius: var(--pnotify-border-radius);
+    box-shadow: var(--pnotify-shadow);
 }
 
 /* Изменить цвет заголовка */
 .pnotify-title {
-  color: white; /* Или другой цвет */
-  font-weight: 700;
+    color: var(--pnotify-text); /* Или другой цвет */
+    font-weight: 700;
 }
 
 /* Изменить текст */
 .pnotify-text {
-  color: var(--primary-light-gray); /* Свой цвет текста */
-  font-size: 0.9em;
+    color: var(--pnotify-text); /* Свой цвет текста */
+    font-size: 0.9em;
 }
 
-/* Настройка общих переменных, если PNotify их использует (проверяйте в PNotify.css) */
-:root {
-  --pnotify-border-radius: 8px;
-  --pnotify-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-
+/*
+   PNotify переменные:
+   Убедитесь, что эти переменные определены в common.css
+   :root {
+     --pnotify-border-radius: 8px;
+     --pnotify-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+     --pnotify-bg: #FFFFFF; // Пример для светлой темы
+     --pnotify-text: #2d3748; // Пример для светлой темы
+   }
+   body.force-dark-theme {
+     --pnotify-bg: #1A1C24; // Пример для темной темы
+     --pnotify-text: #D1D1D1; // Пример для темной темы
+   }
+   @media (prefers-color-scheme: dark) {
+     body:not(.force-light-theme):not(.force-dark-theme) {
+       --pnotify-bg: #1A1C24;
+       --pnotify-text: #D1D1D1;
+     }
+   }
+*/
