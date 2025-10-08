@@ -12,7 +12,7 @@ Development Status and Roadmap:
 
 The current version of the application is v. 1.0.6.
 
-I am actively working on the next minor update, v. 1.1.0, which focuses on a significant architectural improvement and enhanced user control. This update will introduce a more robust abstraction layer for folders and links, paving the way for maximum editing convenience and better data management. This foundation will soon allow for crucial features like backup and transfer between devices.
+I am actively working on the next minor update, v. 2.0.0, which focuses on a significant architectural improvement and enhanced user control. This update will introduce a more robust abstraction layer for folders and links, paving the way for maximum editing convenience and better data management. This foundation will soon allow for crucial features like backup and transfer between devices.
 
 A instruction:
 
