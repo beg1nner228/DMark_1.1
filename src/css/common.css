@@ -1,63 +1,58 @@
 :root {
-    /* Общие переменные для светлой темы (по умолчанию) */
-    --primary-bg: #f7fafc; /* Основной фон приложения */
-    --secondary-bg: #ffffff; /* Фон для карточек, модалок, сайдбара */
-    --tertiary-bg: #edf2f7; /* Фон для заголовков, полей ввода */
+    --primary-bg: #f7fafc; 
+    --secondary-bg: #ffffff; 
+    --tertiary-bg: #edf2f7; 
 
-    --text-primary: #2d3748; /* Основной цвет текста */
-    --text-secondary: #4a5568; /* Вторичный цвет текста (подсказки, менее важная инфа) */
-    --text-inverted: #ffffff; /* Цвет текста на акцентных элементах (кнопки) */
+    --text-primary: #2d3748; 
+    --text-secondary: #4a5568; 
+    --text-inverted: #ffffff; 
 
-    --accent-blue: #5a67d8; /* Основной акцентный синий */
-    --accent-blue-hover: #4a55c0; /* Синий при наведении */
-    --accent-red: #e53e3e; /* Цвет для опасных действий */
-    --accent-red-hover: #c53030; /* Красный при наведении */
+    --accent-blue: #5a67d8; 
+    --accent-blue-hover: #4a55c0; 
+    --accent-red: #e53e3e; 
+    --accent-red-hover: #c53030;
     --accent-green: #27AE60;
     --accent-purple: #7B61FF;
     --accent-orange: #FF8F00;
 
-    --border-color: #e2e8f0; /* Цвет границ */
-    --hover-bg: #edf2f7; /* Фон при наведении на элементы */
-    --hover-bg-secondary: #e2e8f0; /* Дополнительный фон при наведении (например, для навигации) */
+    --border-color: #e2e8f0;
+    --hover-bg: #edf2f7;
+    --hover-bg-secondary: #e2e8f0;
 
-    /* Фильтры для иконок (по умолчанию для светлой темы) */
     --icon-filter-default: invert(40%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(80%) contrast(100%); /* Серый */
     --icon-filter-hover: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%); /* Черный */
     --icon-filter-active: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); /* Белый */
     --icon-filter-danger: invert(30%) sepia(90%) saturate(700%) hue-rotate(330deg) brightness(80%) contrast(100%); /* Красный */
 
-    /* Размеры */
     --sidebar-width: 280px;
-    --spacing-unit: 1rem; /* 16px */
+    --spacing-unit: 1rem; 
 
-    /* Pnotify */
     --pnotify-bg: #000000;
     --pnotify-text: #000000;  
 }
 
-/* Принудительная темная тема - используем ваши новые переменные из предоставленного bookmark.css */
+
 body.force-dark-theme {
-    --primary-bg: #121217; /* bg-dark */
-    --secondary-bg: #1A1C24; /* bg-medium */
-    --tertiary-bg: #242730; /* bg-light */
+    --primary-bg: #121217; 
+    --secondary-bg: #1A1C24; 
+    --tertiary-bg: #242730; 
 
     --text-primary: #D1D1D1;
     --text-secondary: #8E929E;
-    --text-inverted: #121217; /* bg-dark для текста на акцентном фоне */
+    --text-inverted: #121217; 
 
     --accent-blue: #2F80ED;
-    --accent-blue-hover: #216abf; /* #216abf из вашего bookmark.css */
+    --accent-blue-hover: #216abf;
     --accent-red: #EB5757;
-    --accent-red-hover: #c04545; /* Красный при наведении */
+    --accent-red-hover: #c04545; 
     --accent-green: #27AE60;
     --accent-purple: #7B61FF;
     --accent-orange: #FF8F00;
 
-    --border-color: #3A3F52; /* border-color */
-    --hover-bg: #2f3442; /* #2f3442 из вашего bookmark.css */
-    --hover-bg-secondary: #3a3f52; /* #3a3f52 из вашего bookmark.css */
+    --border-color: #3A3F52; 
+    --hover-bg: #2f3442; 
+    --hover-bg-secondary: #3a3f52; 
 
-    /* Фильтры для иконок (для темной темы) */
     --icon-filter-default: invert(60%) sepia(8%) saturate(151%) hue-rotate(180deg) brightness(92%) contrast(85%); /* Светло-серый */
     --icon-filter-hover: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); /* Белый */
     --icon-filter-active: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%); /* Черный (для активных кнопок на синем фоне) */
@@ -66,12 +61,12 @@ body.force-dark-theme {
     --folder-icon-filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); /* Белый для иконок папок */
     --bookmark-favicon-filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); /* Белый для фавиконок */
 
-    /* PNotify - используем переменные */
+    /* PNotify  */
     --pnotify-bg: #fff;
     --pnotify-text: #fff;  
 }
 
-/* PNotify - используем переменные */
+/* PNotify */
 .pnotify.pnotify-error .pnotify-container {
     background-color: var(--pnotify-bg);
     color: var(--pnotify-text);
@@ -80,3 +75,48 @@ body.force-dark-theme {
 }
 .pnotify-title { color: var(--pnotify-text); font-weight: 700; }
 .pnotify-text { color: var(--pnotify-text); font-size: 0.9em; }
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 8px 15px;
+    flex-grow: 1;
+    max-width: 400px;
+    margin-right: 20px;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+/* AI Assistant FAB */
+
+.ai-assistant-fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px; 
+    width: auto; 
+    background-color: var(--accent-blue); 
+    color: var(--text-inverted); 
+    padding: 10px 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    text-align: right;
+    font-weight: 600;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 1000; 
+}
+
+.ai-assistant-fab:hover {
+    background-color: var(--accent-blue-hover); 
+}
+
+.ai-helper {
+    font-size: 0.8em;
+    opacity: 0.8;
+}

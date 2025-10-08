@@ -1,16 +1,14 @@
 import { nanoid } from 'nanoid';
 import defaultBookmarkFavicon from '../images/dashboard-test.svg';
-import editImg from '../images/edit.svg';    // Убедитесь, что путь правильный
-import deleteImg from '../images/delete.svg'; // Убедитесь, что путь правильный
+import editImg from '../images/edit.svg';    
+import deleteImg from '../images/delete.svg'; 
 
-// ================== ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ ==================
-// allBookmarks будет обновляться динамически перед использованием
 let allBookmarks = JSON.parse(localStorage.getItem('dashMarkBookmarks')) || [];
 
 // =============== УТИЛИТЫ ===============
 
 /**
- * Экранирует HTML-спецсимволы для предотвращения XSS-атак.
+ * XSS
  * @param {string} str Входящая строка.
  * @returns {string} Экранированная строка.
  */
@@ -24,9 +22,9 @@ function escapeHtml(str = '') {
 }
 
 /**
- * Генерирует URL для фавиконки по URL страницы.
- * @param {string} url URL страницы.
- * @returns {string} URL фавиконки или дефолтное изображение.
+ * Generation of icons.
+ * @param {string} url 
+ * @returns {string} 
  */
 function getHistoryFaviconUrl(url) {
     try {
@@ -37,18 +35,13 @@ function getHistoryFaviconUrl(url) {
     }
 }
 
-/**
- * Сохраняет текущее состояние allBookmarks в localStorage.
- */
 function saveBookmarksToLocalStorage() {
     localStorage.setItem('dashMarkBookmarks', JSON.stringify(allBookmarks));
 }
 
 /**
- * Добавляет запись о посещенной ссылке в историю localStorage.
- * Ограничивает количество записей до 1000.
- * @param {object} link Объект ссылки (должен содержать url, title).
- * @param {string|null} folderId ID папки, если ссылка из папки.
+ * @param {object} link (url, title).
+ * @param {string|null} folderId 
  */
 function addToHistory(link, folderId = null) {
     let history = JSON.parse(localStorage.getItem('dashMarkHistory')) || [];
@@ -61,16 +54,14 @@ function addToHistory(link, folderId = null) {
         visitedAt: Date.now()
     };
 
-    history.unshift(record); // Добавляем в начало
-    if (history.length > 1000) history.pop(); // Ограничиваем историю
+    history.unshift(record); 
+    if (history.length > 1000) history.pop(); 
 
     localStorage.setItem('dashMarkHistory', JSON.stringify(history));
 }
 
-// =============== МИГРАЦИЯ (гарантируем наличие id и visits) ===============
+
 /**
- * Обеспечивает наличие уникальных ID и счетчика посещений для папок и ссылок
- * в localStorage. Используется при первой загрузке или миграции данных.
  * @returns {Array} Обновленный массив закладок.
  */
 function ensureIds() {
@@ -87,8 +78,8 @@ function ensureIds() {
                 link.id = nanoid();
                 changed = true;
             }
-            link.visits = link.visits || 0; // Инициализация счетчика посещений
-            if (!link.lastVisitedAt) { // Инициализация даты последнего посещения
+            link.visits = link.visits || 0; 
+            if (!link.lastVisitedAt) {
                 link.lastVisitedAt = null;
             }
             return link;
@@ -102,12 +93,10 @@ function ensureIds() {
     return data;
 }
 
-// ================= DOMContentLoaded =================
+// DOMContentLoaded 
 document.addEventListener('DOMContentLoaded', () => {
-    // Гарантируем, что все закладки имеют ID и счетчики посещений
     allBookmarks = ensureIds();
 
-    // --- Элементы DOM для модалки истории ---
     const historyBtn = document.querySelector('.historyBtnJS');
     const historyModalBackdrop = document.querySelector('.js-history-modal-backdrop');
     const historyModalCloseBtn = document.querySelector('.js-close-history-modal-btn');
@@ -115,12 +104,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const historyList = document.querySelector('.js-history-list');
     const noHistoryMessage = document.querySelector('.js-no-history-message');
 
-    // --- Элементы DOM для модалки папки (если есть на странице) ---
-    const folderLinksList = document.querySelector('.js-folder-links-list'); // Список ссылок внутри модалки папки
+    const folderLinksList = document.querySelector('.js-folder-links-list'); 
 
     /**
-     * Рендерит записи истории в модальном окне.
-     * @param {string} [filter=''] Строка для фильтрации записей.
+     * @param {string} [filter='']
      */
     function renderHistoryEntries(filter = '') {
         const history = JSON.parse(localStorage.getItem('dashMarkHistory')) || [];
@@ -129,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        historyList.innerHTML = ''; // Очищаем список перед рендерингом
+        historyList.innerHTML = ''; 
 
         const filtered = history.filter(entry =>
             entry.title.toLowerCase().includes(filter.toLowerCase()) ||
@@ -144,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const listItem = document.createElement('li');
                 listItem.classList.add('history-list-item');
                 const favicon = getHistoryFaviconUrl(entry.url);
-                const visitedDate = new Date(entry.visitedAt).toLocaleString(); // Форматируем дату
+                const visitedDate = new Date(entry.visitedAt).toLocaleString();
 
                 listItem.innerHTML = `
                     <img src="${escapeHtml(favicon)}" alt="favicon" class="history-link-favicon">
@@ -156,27 +143,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    /**
-     * Открывает модальное окно истории.
-     */
     function openHistoryModal() {
         if (historyModalBackdrop) {
             historyModalBackdrop.classList.add('is-open');
-            renderHistoryEntries(); // Рендерим историю при открытии
-            if (historySearchInput) historySearchInput.value = ''; // Очищаем поиск при открытии
+            renderHistoryEntries(); 
+            if (historySearchInput) historySearchInput.value = ''; 
         }
     }
 
-    /**
-     * Закрывает модальное окно истории.
-     */
     function closeHistoryModal() {
         if (historyModalBackdrop) {
             historyModalBackdrop.classList.remove('is-open');
         }
     }
 
-    // --- Слушатели для модалки истории ---
     if (historyBtn) historyBtn.addEventListener('click', openHistoryModal);
     if (historyModalCloseBtn) historyModalCloseBtn.addEventListener('click', closeHistoryModal);
     if (historyModalBackdrop) {
@@ -195,11 +175,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Рендер ссылок в модалке папки (если она есть на странице) ---
     /**
-     * Рендерит ссылки для конкретной папки в модальном окне деталей папки.
-     * Каждая ссылка получает свой собственный слушатель кликов для добавления в историю.
-     * @param {object} folder Объект папки с ссылками.
+     * @param {object} folder 
      */
     function renderFolderLinks(folder) {
         if (!folderLinksList) {
@@ -242,16 +219,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
             
-            // --- ДОБАВЛЕНИЕ СЛУШАТЕЛЯ К КАЖДОЙ ССЫЛКЕ В МОДАЛКЕ ПАПКИ ---
             const linkElement = listItem.querySelector('.link-title');
             if (linkElement) {
                 linkElement.addEventListener('click', (e) => {
-                    // e.preventDefault(); // Закомментируйте, если хотите, чтобы браузер сразу переходил
 
                     const clickedLinkId = e.currentTarget.dataset.linkId;
                     const clickedFolderId = e.currentTarget.dataset.folderId;
 
-                    // Обновляем allBookmarks перед поиском, чтобы убедиться в актуальности
                     allBookmarks = JSON.parse(localStorage.getItem('dashMarkBookmarks')) || [];
 
                     const targetFolder = allBookmarks.find(f => String(f.id) === String(clickedFolderId));
@@ -268,46 +242,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     addToHistory(targetLink, targetFolder.id);
 
-                    // Обновляем статистику в allBookmarks (по ссылке на объект)
                     targetLink.visits = (targetLink.visits || 0) + 1;
                     targetLink.lastVisitedAt = Date.now();
-                    saveBookmarksToLocalStorage(); // Сохраняем обновленные allBookmarks
-
-                    // Если e.preventDefault() был активен, то вам нужно вручную открыть ссылку:
-                    // window.open(targetLink.url, '_blank');
+                    saveBookmarksToLocalStorage(); 
                 });
             }
-            // --- КОНЕЦ ДОБАВЛЕНИЯ СЛУШАТЕЛЯ ---
 
             folderLinksList.appendChild(listItem);
         });
     }
 
-    // --- Глобальный обработчик для ссылок (из основного грида, не из модалки папки) ---
     document.addEventListener('click', (e) => {
         const clickedLink = e.target.closest('a[data-link-id]');
         
-        // Если клик был по ссылке, которая является частью модалки папки,
-        // то ее уже обработал внутренний слушатель в renderFolderLinks.
-        // Поэтому здесь мы ничего не делаем.
         if (clickedLink && folderLinksList && folderLinksList.contains(clickedLink)) {
             return; 
         }
 
-        if (!clickedLink) return; // Клик не по ссылке с data-link-id
-
-        // e.preventDefault(); // Закомментируйте, если хотите, чтобы браузер сразу переходил
+        if (!clickedLink) return;
 
         const linkId = clickedLink.dataset.linkId;
         const folderId = clickedLink.dataset.folderId || null;
 
-        // Обновляем allBookmarks перед поиском, чтобы убедиться в актуальности
         allBookmarks = JSON.parse(localStorage.getItem('dashMarkBookmarks')) || [];
 
         let foundLink = null;
         let foundFolder = null;
 
-        // Оптимизированный поиск: сначала ищем по folderId, если он есть
         if (folderId) {
             const folder = allBookmarks.find(f => String(f.id) === String(folderId));
             if (folder) {
@@ -316,7 +277,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Если не нашли по folderId (или folderId не было), ищем по всем папкам
         if (!foundLink) {
             for (const folder of allBookmarks) {
                 const maybe = (folder.links || []).find(l => String(l.id) === String(linkId));
@@ -330,56 +290,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!foundLink) {
             console.warn('Link not found with ID:', linkId, 'and folder ID:', folderId);
-            return; // Ссылка не найдена в allBookmarks, не добавляем в историю
+            return; 
         }
 
         addToHistory(foundLink, foundFolder ? foundFolder.id : null);
 
-        // Обновляем статистику в allBookmarks (по ссылке на объект)
         foundLink.visits = (foundLink.visits || 0) + 1;
         foundLink.lastVisitedAt = Date.now();
-        saveBookmarksToLocalStorage(); // Сохраняем обновленные allBookmarks
+        saveBookmarksToLocalStorage(); 
     });
-
-    // --- Пример вызова открытия модалки папки ---
-    // Эту функцию вы должны вызывать там, где у вас открывается модалка деталей папки
-    // (например, при клике на карточку папки в основном гриде).
-    // Убедитесь, что 'folderDetailsBackdrop' и другие элементы модалки папки
-    // существуют в вашем HTML.
-    // function openFolderDetailsModal(folderId) {
-    //     allBookmarks = JSON.parse(localStorage.getItem('dashMarkBookmarks')) || [];
-    //     const folder = allBookmarks.find(f => String(f.id) === String(folderId));
-    //     if (!folder) return;
-
-    //     const folderDetailsBackdrop = document.querySelector('.folder-details-backdrop'); // Пример элемента модалки
-    //     if (folderDetailsBackdrop) {
-    //         folderDetailsBackdrop.classList.add('is-open');
-    //         // Установите заголовок модалки
-    //         const folderNameElement = document.querySelector('.js-folder-details-name');
-    //         if (folderNameElement) folderNameElement.textContent = folder.name;
-    //         renderFolderLinks(folder); // Рендерим ссылки в модалке папки
-    //     }
-    // }
-
-    // Здесь может быть код для рендеринга основного грида папок,
-    // который при клике на папку будет вызывать openFolderDetailsModal
-    // или другую вашу функцию для открытия деталей папки.
-    // Например:
-    // const foldersGrid = document.querySelector('.folders-grid');
-    // if (foldersGrid) {
-    //     foldersGrid.addEventListener('click', (e) => {
-    //         const folderCard = e.target.closest('.folder-card');
-    //         if (folderCard && e.target.closest('.folder-actions-btn')) {
-    //             // Клик по кнопке действия, не открываем модалку деталей
-    //             return;
-    //         }
-    //         if (folderCard) {
-    //             const folderId = folderCard.dataset.folderId;
-    //             if (folderId) {
-    //                 openFolderDetailsModal(folderId);
-    //             }
-    //         }
-    //     });
-    // }
-
-}); // Конец DOMContentLoaded
+}); 

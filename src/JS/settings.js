@@ -1,5 +1,4 @@
-// src/main.js
-import { applyAndSaveTheme } from './theme.js'; // Импортируем функцию из theme.js
+import { applyAndSaveTheme } from './theme.js'; 
 
 document.addEventListener('DOMContentLoaded', () => {
     const settingsBackdrop = document.querySelector('.js-settings-modal-backdrop');
@@ -13,12 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchEngineSelect = document.getElementById('searchEngine');
 
     // Appearance Settings
-    // const themeSelect = document.getElementById('theme'); // УДАЛЯЕМ - теперь управляется theme.js
     const fontSizeInput = document.getElementById('fontSize');
     const fontSizeValueSpan = document.getElementById('fontSizeValue');
     const accentColorInput = document.getElementById('accentColor');
 
-    // Data Management (кнопки экспорта/импорта закомментированы)
+    // Data Management 
     const clearHistoryButton = document.querySelector('.js-clear-history-btn');
     const resetAllBtn = document.querySelector('.js-reset-all-btn');
 
@@ -28,8 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // header
     const mainSearchInput = document.querySelector('.top-header .search-input');
 
-    // --- Keys for LocalStorage
-    // const THEME_STORAGE_KEY = 'userThemePreference'; // УДАЛЯЕМ - теперь в theme.js
+    // keys
     const FONT_SIZE_STORAGE_KEY = 'userFontSizePreference';
     const ACCENT_COLOR_STORAGE_KEY = 'userAccentColorPreference';
     const START_PAGE_STORAGE_KEY = 'userStartPagePreference';
@@ -37,30 +34,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const BOOKMARKS_STORAGE_KEY = 'dashMarkBookmarks';
     const HISTORY_STORAGE_KEY = 'dashMarkHistory';
 
-
-    // Utils - оставляем только те, что не связаны с темой
-    // function applyTheme(theme) { ... } // УДАЛЯЕМ эту функцию
-    // function applyFontSize(fontSize) { ... } // Оставляем
-    // function applyAccentColor(color) { ... } // Оставляем
-    // function applyStartPage(page) { ... } // Оставляем
-    // function applySearchEngine(engine) { ... } // Оставляем
-
-
     /**
-     * Применяет выбранный размер шрифта к элементу и отображает его значение.
-     * @param {string} fontSize - Значение размера шрифта (например, '16').
+     * @param {string} fontSize 
      */
     function applyFontSize(fontSize) {
         if (fontSizeInput && fontSizeValueSpan) {
             fontSizeInput.value = parseInt(fontSize);
             fontSizeValueSpan.textContent = `${fontSize}px`;
-            document.documentElement.style.setProperty('--user-font-size', `${fontSize}px`); // Если вы хотите применить глобально
+            document.documentElement.style.setProperty('--user-font-size', `${fontSize}px`); 
         }
     }
 
     /**
-     * Применяет выбранный акцентный цвет к CSS переменной.
-     * @param {string} color - HEX-код цвета (например, '#5a67d8').
+     * @param {string} color 
      */
     function applyAccentColor(color) {
         document.documentElement.style.setProperty('--user-accent-color', color);
@@ -70,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-     * Применяет выбранную стартовую страницу.
      * @param {string} page - 'dashboard', 'last-session' или 'new-tab'.
      */
     function applyStartPage(page) {
@@ -80,8 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-     * Применяет выбранную поисковую систему.
-     * @param {string} engine - 'google', 'duckduckgo', 'bing', 'yandex', 'firefox'.
+     * @param {string} engine 
      */
     function applySearchEngine(engine) {
         if (searchEngineSelect) {
@@ -98,14 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function initializeSettings() {
-        // Тема теперь инициализируется в theme.js, но нужно убедиться, что select в модалке синхронизирован
-        // themeSelect.value = localStorage.getItem(THEME_STORAGE_KEY) || 'system'; // УДАЛЯЕМ, theme.js сделает это
-        // applyTheme(savedTheme); // УДАЛЯЕМ, theme.js сделает это
-        
-        // ВАЖНО: Вызываем applyAndSaveTheme из theme.js для синхронизации настроек с UI
-        // Это также обновит select в модалке и класс body, если нужно.
+
         const savedThemePreference = localStorage.getItem('userThemePreference') || 'system';
-        applyAndSaveTheme(savedThemePreference, false); // Не сохраняем, так как уже сохранено
+        applyAndSaveTheme(savedThemePreference, false); 
 
         const savedFontSize = localStorage.getItem(FONT_SIZE_STORAGE_KEY) || (fontSizeInput ? fontSizeInput.value : '16');
         applyFontSize(savedFontSize);
@@ -183,17 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // УДАЛЯЕМ этот блок, так как theme.js теперь управляет themeSelect
-    /*
-    if (themeSelect) {
-        themeSelect.addEventListener('change', function() {
-            const selectedTheme = this.value;
-            applyTheme(selectedTheme);
-            localStorage.setItem(THEME_STORAGE_KEY, selectedTheme);
-        });
-    }
-    */
-
     if (fontSizeInput && fontSizeValueSpan) {
         fontSizeInput.addEventListener('input', function() {
             const newFontSize = this.value;
@@ -225,8 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem(SEARCH_ENGINE_STORAGE_KEY, newSearchEngine);
         });
     }
-
-    // ... остальной код для кнопок "Data Management", поиска и т.д. ...
 
     if (clearHistoryButton) {
         clearHistoryButton.addEventListener('click', clearAllHistoryInternal);
@@ -273,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             case 'last-session':
                 console.log('Last Session option selected. Implement your "load last session" logic here.');
-                alert('Loading last session is not yet implemented.');
+                // alert('Loading last session is not yet implemented.');
                 break;
             case 'start-page':
                 console.log('Start Page option selected. Implement your "open start page" logic here.');
@@ -322,7 +288,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
 
     initializeSettings();
     initializeStartPageLoad();

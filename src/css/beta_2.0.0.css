@@ -2,24 +2,23 @@
 
 @import './common.css';
 
-/* --- ОБЩИЕ СТИЛИ --- */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--primary-bg); /* Использовать primary-bg */
+    background-color: var(--primary-bg); 
     color: var(--text-primary);
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Предотвращает прокрутку всей страницы */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Добавил переходы для плавной смены темы */
+    overflow: hidden; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
-/* Скрываем скроллбар для всего приложения */
+
 body::-webkit-scrollbar {
     display: none;
 }
 body {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
 }
 
 .app-container {
@@ -28,23 +27,18 @@ body {
     width: 100vw;
 }
 
-.container { /* Адаптируем ваш класс .container для нового макета */
-    max-width: 1200px; /* Например, для центрирования содержимого в макете */
-    margin: 0 auto;
-    padding: 0 20px;
-}
+/* sidebar */
 
-/* --- САЙДБАР --- */
 .sidebar {
     width: var(--sidebar-width);
-    background-color: var(--secondary-bg); /* Использовать secondary-bg */
+    background-color: var(--secondary-bg); 
     padding: 20px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
-    flex-shrink: 0; /* Чтобы сайдбар не сжимался */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Плавная смена темы */
+    flex-shrink: 0; 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .sidebar-header {
@@ -52,11 +46,11 @@ body {
     margin-bottom: 30px;
 }
 
-.header-logo-link { /* Ваш класс из оригинального HTML */
+.header-logo-link { 
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: var(--text-primary); /* Использовать text-primary */
+    color: var(--text-primary); 
     font-weight: bold;
     font-size: 1.5em;
     gap: 10px;
@@ -72,7 +66,7 @@ body {
     align-items: center;
     gap: 15px;
     padding: 15px 20px;
-    border-bottom: 1px solid var(--border-color); /* Использовать border-color */
+    border-bottom: 1px solid var(--border-color); 
     margin-bottom: 20px;
 }
 
@@ -86,7 +80,7 @@ body {
 .user-name {
     flex-grow: 1;
     font-weight: 600;
-    color: var(--text-primary); /* Использовать text-primary */
+    color: var(--text-primary); 
 }
 
 .sidebar-nav ul {
@@ -105,39 +99,39 @@ body {
     gap: 15px;
     padding: 12px 20px;
     text-decoration: none;
-    color: var(--text-secondary); /* Использовать text-secondary */
+    color: var(--text-secondary); 
     font-weight: 500;
     transition: background-color 0.2s, color 0.2s;
-    border-radius: 0 8px 8px 0; /* Скругление только с одной стороны */
+    border-radius: 0 8px 8px 0; 
 }
 
 .nav-link img {
     width: 24px;
     height: 24px;
-    filter: var(--icon-filter-default); /* Использовать переменную */
-    transition: filter 0.2s ease; /* Плавная смена фильтра */
+    filter: var(--icon-filter-default); 
+    transition: filter 0.2s ease; 
 }
 
 .nav-item.active .nav-link {
     background-color: var(--accent-blue);
-    color: var(--text-inverted); /* Использовать text-inverted */
+    color: var(--text-inverted); 
     font-weight: 700;
 }
 
 .nav-item.active .nav-link img {
-    filter: var(--icon-filter-active); /* Использовать переменную */
+    filter: var(--icon-filter-active); 
 }
 
 .nav-link:hover {
-    background-color: var(--hover-bg); /* Использовать переменную */
-    color: var(--text-primary); /* Использовать text-primary */
+    background-color: var(--hover-bg); 
+    color: var(--text-primary); 
 }
 
 .sidebar-footer {
     padding: 20px;
     text-align: center;
-    border-top: 1px solid var(--border-color); /* Использовать border-color */
-    margin-top: auto; /* Прижимает футер к низу */
+    border-top: 1px solid var(--border-color); 
+    margin-top: auto; 
 }
 
 .cloud-icon {
@@ -146,30 +140,30 @@ body {
     opacity: 0.6;
 }
 
-/* --- ОСНОВНОЙ КОНТЕНТ --- */
+/* main content index.html */
 .main-content {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    overflow-y: auto; /* Позволяет прокручивать только основное содержимое */
-    padding: 0; /* Отступы от края */
-    transition: background-color 0.3s ease; /* Плавная смена темы */
+    overflow-y: auto; 
+    padding: 0; 
+    transition: background-color 0.3s ease; 
 }
 
-/* Стилизация скроллбара для main-content */
+
 .main-content::-webkit-scrollbar {
     width: 8px;
 }
 .main-content::-webkit-scrollbar-track {
-    background: var(--secondary-bg); /* Использовать secondary-bg */
+    background: var(--secondary-bg); 
     border-radius: 10px;
 }
 .main-content::-webkit-scrollbar-thumb {
-    background: var(--border-color); /* Использовать border-color */
+    background: var(--border-color); 
     border-radius: 10px;
 }
 .main-content::-webkit-scrollbar-thumb:hover {
-    background: var(--text-secondary); /* Установил на text-secondary */
+    background: var(--text-secondary); 
 }
 
 
@@ -179,26 +173,26 @@ body {
     align-items: center;
     padding: 20px 10px;
     margin-bottom: 20px;
-    border-bottom: 1px solid var(--border-color); /* Разделитель */
+    border-bottom: 1px solid var(--border-color); 
     position: sticky;
     top: 0;
-    background-color: var(--tertiary-bg); /* Использовать tertiary-bg */
+    background-color: var(--tertiary-bg); 
     z-index: 100;
-    transition: background-color 0.3s ease; /* Плавная смена темы */
+    transition: background-color 0.3s ease; 
 }
 
 .search-icon {
     width: 20px;
     height: 20px;
     margin-right: 10px;
-    filter: var(--icon-filter-default); /* Использовать переменную */
+    filter: var(--icon-filter-default); 
 }
 
 .search-input {
     background: none;
     border: none;
     outline: none;
-    color: var(--text-primary); /* Использовать text-primary */
+    color: var(--text-primary); 
     width: 100%;
     font-size: 1em;
 }
@@ -209,7 +203,7 @@ body {
 }
 
 .search-input::placeholder {
-    color: var(--text-secondary); /* Использовать text-secondary */
+    color: var(--text-secondary); 
     border: none;
     outline: none;
 }
@@ -217,16 +211,17 @@ body {
 .header-right-controls {
     display: flex;
     align-items: center;
-    gap: 15px; /* Увеличил отступ между элементами */
+    gap: 15px; 
 }
 
-/* Стили для переключателя темы (ваш оригинальный класс) */
+/* theme */
+
 .header-theme {
-    background-color: var(--secondary-bg); /* Использовать secondary-bg */
+    background-color: var(--secondary-bg); 
     border-radius: 8px;
     padding: 5px;
     display: flex;
-    transition: background-color 0.3s ease; /* Плавная смена темы */
+    transition: background-color 0.3s ease; 
 }
 
 .theme-toggle {
@@ -245,37 +240,38 @@ body {
 .chooseLanguage {
     display: flex;
     gap: 0px;
-    background-color: var(--secondary-bg); /* Использовать secondary-bg */
+    background-color: var(--secondary-bg); 
     border-radius: 8px;
     padding: 5px;
-    transition: background-color 0.3s ease; /* Плавная смена темы */
+    transition: background-color 0.3s ease; 
 }
 
 .lang-switch-btn {
     background: none;
     border: none;
-    color: var(--text-secondary); /* Использовать text-secondary */
+    color: var(--text-secondary);
     padding: 5px 10px;
     border-radius: 6px;
     cursor: pointer;
     font-weight: 500;
     transition: background-color 0.2s, color 0.2s;
-    min-width: 30px; /* Чтобы кнопки EN, UK, RU были одинакового размера */
+    min-width: 30px; 
     text-align: center;
 }
 
 .lang-switch-btn:hover {
-    background-color: var(--hover-bg-secondary); /* Использовать переменную */
-    color: var(--text-primary); /* Использовать text-primary */
+    background-color: var(--hover-bg-secondary); 
+    color: var(--text-primary);
 }
-.lang-switch-btn.active { /* Если у вас будет активный язык */
-    background-color: var(--accent-blue); /* Используем акцентный синий */
-    color: var(--text-inverted); /* Использовать text-inverted */
+.lang-switch-btn.active { 
+    background-color: var(--accent-blue); 
+    color: var(--text-inverted); 
     font-weight: 600;
 }
 
 
-/* --- DASHBOARD MAIN CONTENT --- */
+/* dashboard main content */
+
 .dashboard-main {
     padding: 20px;
     flex-grow: 1;
@@ -286,13 +282,13 @@ body {
 }
 
 .dashboard-section h2 {
-    color: var(--text-primary); /* Использовать text-primary */
+    color: var(--text-primary); 
     font-size: 1.5em;
     font-weight: 600;
     margin-bottom: 20px;
 }
 
-/* Секция Quick Access */
+/* Quick Access */
 .folders-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -300,7 +296,7 @@ body {
 }
 
 .folder-card {
-    background-color: var(--tertiary-bg); /* Использовать tertiary-bg */
+    background-color: var(--tertiary-bg); 
     border-radius: 12px;
     padding: 20px;
     display: flex;
@@ -315,18 +311,17 @@ body {
 
 .folder-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Добавил тень при наведении */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); 
 }
 
-/* Индикаторы цвета папок */
 .folder-card::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 8px; /* Высота цветной полоски */
-    background-color: var(--folder-color); /* Цвет из inline style, теперь с использованием CSS-переменных */
+    height: 8px; 
+    background-color: var(--folder-color); 
     border-radius: 12px 12px 0 0;
 }
 
@@ -340,39 +335,40 @@ body {
 .folder-icon {
     width: 32px;
     height: 32px;
-    filter: var(--folder-icon-filter); /* Использовать переменную */
+    filter: var(--folder-icon-filter); 
     transition: filter 0.3s ease;
 }
 
 .folder-name {
     font-size: 1.1em;
     font-weight: 600;
-    color: var(--text-primary); /* Использовать text-primary */
+    color: var(--text-primary); 
 }
 
 .folder-preview-icons {
     display: flex;
     gap: 8px;
-    margin-top: auto; /* Прижимает иконки к низу */
+    margin-top: auto; 
 }
 
 .folder-preview-icons img {
     width: 24px;
     height: 24px;
     opacity: 0.7;
-    transition: opacity 0.2s, filter 0.2s; /* Плавная смена фильтра */
+    transition: opacity 0.2s, filter 0.2s; 
 }
 
 .folder-preview-icons img:hover {
     opacity: 1;
-    filter: var(--icon-filter-hover); /* Использовать переменную */
+    filter: var(--icon-filter-hover); 
 }
 
 .folder-preview-icons .add-icon {
-    margin-left: auto; /* Отодвигает плюс вправо */
+    margin-left: auto; 
 }
 
-/* Секция Recent Bookmarks */
+/* Recent Bookmarks */
+
 .bookmarks-list {
     list-style: none;
     padding: 0;
@@ -380,7 +376,7 @@ body {
 }
 
 .bookmark-item {
-    background-color: var(--secondary-bg); /* Использовать secondary-bg */
+    background-color: var(--secondary-bg); 
     border-radius: 8px;
     padding: 15px 20px;
     margin-bottom: 10px;
@@ -391,7 +387,7 @@ body {
 }
 
 .bookmark-item:hover {
-    background-color: var(--hover-bg); /* Использовать переменную */
+    background-color: var(--hover-bg); 
 }
 
 .bookmark-info {
@@ -404,19 +400,19 @@ body {
     width: 8px;
     height: 30px;
     border-radius: 4px;
-    background-color: var(--accent-blue); /* Используем акцентный синий по умолчанию, если нет динамического цвета */
+    background-color: var(--accent-blue); 
 }
 
 .bookmark-favicon {
     width: 24px;
     height: 24px;
-    filter: var(--bookmark-favicon-filter); /* Использовать переменную */
+    filter: var(--bookmark-favicon-filter); 
     transition: filter 0.3s ease;
 }
 
 .bookmark-title {
     font-weight: 500;
-    color: var(--text-primary); /* Использовать text-primary */
+    color: var(--text-primary); 
 }
 
 .bookmark-actions {
@@ -429,83 +425,30 @@ body {
     height: 20px;
     cursor: pointer;
     opacity: 0.6;
-    transition: opacity 0.2s, filter 0.2s; /* Плавная смена фильтра */
-    filter: var(--icon-filter-default); /* Использовать переменную */
+    transition: opacity 0.2s, filter 0.2s;
+    filter: var(--icon-filter-default);
 }
 
 .bookmark-actions .action-icon:hover {
     opacity: 1;
-    filter: var(--icon-filter-hover); /* Использовать переменную */
+    filter: var(--icon-filter-hover);
 }
 
-/* --- AI Assistant FAB --- */
-.ai-assistant-fab {
-    position: fixed; /* Изменено на fixed */
-    bottom: 30px; /* Отступ от низа */
-    right: 30px; /* Отступ от правого края */
-    width: auto; /* in the next update should be added a new value of width because of ai svg */
-    background-color: var(--accent-blue); /* Использовать accent-blue */
-    color: var(--text-inverted); /* Использовать text-inverted */
-    padding: 10px 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    text-align: right;
-    font-weight: 600;
-    font-size: 0.9em;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    z-index: 1000; /* Чтобы был поверх всего */
-}
-
-.ai-assistant-fab:hover {
-    background-color: var(--accent-blue-hover); /* Использовать accent-blue-hover */
-}
-
-.ai-helper {
-    font-size: 0.8em;
-    opacity: 0.8;
-}
-
-/* PNotify стили, использующие переменные из common.css */
 .pnotify.pnotify-error .pnotify-container {
-    background-color: var(--pnotify-bg); /* Используйте свои переменные */
+    background-color: var(--pnotify-bg); 
     color: var(--pnotify-text);
     border-radius: var(--pnotify-border-radius);
     box-shadow: var(--pnotify-shadow);
 }
 
-/* Изменить цвет заголовка */
 .pnotify-title {
-    color: var(--pnotify-text); /* Или другой цвет */
+    color: var(--pnotify-text); 
     font-weight: 700;
 }
 
 /* Изменить текст */
 .pnotify-text {
-    color: var(--pnotify-text); /* Свой цвет текста */
+    color: var(--pnotify-text); 
     font-size: 0.9em;
 }
 
-/*
-   PNotify переменные:
-   Убедитесь, что эти переменные определены в common.css
-   :root {
-     --pnotify-border-radius: 8px;
-     --pnotify-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-     --pnotify-bg: #FFFFFF; // Пример для светлой темы
-     --pnotify-text: #2d3748; // Пример для светлой темы
-   }
-   body.force-dark-theme {
-     --pnotify-bg: #1A1C24; // Пример для темной темы
-     --pnotify-text: #D1D1D1; // Пример для темной темы
-   }
-   @media (prefers-color-scheme: dark) {
-     body:not(.force-light-theme):not(.force-dark-theme) {
-       --pnotify-bg: #1A1C24;
-       --pnotify-text: #D1D1D1;
-     }
-   }
-*/

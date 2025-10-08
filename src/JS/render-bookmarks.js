@@ -1,13 +1,12 @@
 import { closeModal } from "./bookmarks/modals";
-import folderIMG from '../images/folder.svg'; // Default folder icon
-import defaultBookmarkFavicon from '../images/dashboard-test.svg'; // Default favicon for links in preview
+import folderIMG from '../images/folder.svg'; 
+import defaultBookmarkFavicon from '../images/dashboard-test.svg'; 
 import { nanoid } from 'nanoid';
 
 export const savedData = localStorage.getItem('dashMarkBookmarks');
 
 document.addEventListener('DOMContentLoaded', () => {
     const createFolderForm = document.querySelector('.new-folder-form');
-    // ИСПРАВЛЕНО: Теперь bookmarkContainer ссылается на .folders-grid
     const bookmarkContainer = document.querySelector('.folders-grid');
     const resetBookmarksBtn = document.querySelector('.reset-bookmarksBtnJS');
     const createBookmarkTitle = document.querySelector('.BookmarkTitleJS');
@@ -15,11 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!createFolderForm) {
         console.error('Form .new-folder-form not found in DOM — check your HTML or script loading order.');
-        // return; // Оставляем, чтобы другие части скрипта могли работать, если форма необязательна
     }
     if (!bookmarkContainer) {
         console.error('Bookmark container .folders-grid not found.');
-        return; // Если контейнер не найден, то нет смысла продолжать рендеринг
+        return; 
     }
 
     // load stored data
@@ -27,9 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let allBookmarks = savedData ? JSON.parse(savedData) : [];
 
     // Reset button functionality
-    if (resetBookmarksBtn) { // Добавлена проверка
+    if (resetBookmarksBtn) { 
         resetBookmarksBtn.addEventListener("click", (e) => {
-            const imgElement = e.target.closest('.resetBtn')?.querySelector('.resetImg'); // Находим img внутри кнопки
+            const imgElement = e.target.closest('.resetBtn')?.querySelector('.resetImg'); 
             if (imgElement) {
                 imgElement.classList.add("reset_animation");
             }
@@ -122,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderAllBookmarks(filter = '') {
         if (!bookmarkContainer) return;
 
-        allBookmarks = JSON.parse(localStorage.getItem('dashMarkBookmarks')) || []; // Обновляем данные
+        allBookmarks = JSON.parse(localStorage.getItem('dashMarkBookmarks')) || []; 
 
         const filteredBookmarks = allBookmarks.filter(folder =>
             folder.name.toLowerCase().includes(filter.toLowerCase())
@@ -142,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('dashMarkBookmarks', JSON.stringify(allBookmarks));
     }
 
-    // utility: escape html to avoid XSS (дублируется, лучше вынести)
+    // utility: escape html to avoid XSS 
     function escapeHtml(str = '') {
         return String(str)
             .replaceAll('&', '&amp;')
@@ -176,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // main submit handler
-    if (createFolderForm) { // Проверка
+    if (createFolderForm) { 
         createFolderForm.addEventListener('submit', async (event) => {
             event.preventDefault();
 
@@ -185,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const folderNameRaw = fd.get('folderName');
             const bookmarkURLRaw = fd.get('bookmarkURL');
             const bookmarkTitleRaw = fd.get('bookmarkTitle');
-            const folderIconFile = fd.get('folderIcon'); // File or null
+            const folderIconFile = fd.get('folderIcon'); 
 
             const folderName = (folderNameRaw && folderNameRaw.toString().trim()) || '';
             const bookmarkURL = (bookmarkURLRaw && bookmarkURLRaw.toString().trim()) || '';
@@ -209,8 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // If a file was chosen and has size > 0, convert to base64
-            let iconData = folderIMG; // Default icon
+            let iconData = folderIMG; 
             if (folderIconFile && folderIconFile instanceof File && folderIconFile.size > 0) {
                 try {
                     iconData = await fileToDataURL(folderIconFile);
@@ -219,22 +216,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            const newLink = { title: bookmarkTitle, url: bookmarkURL, id: nanoid() }; // Добавлен ID для ссылки
-
+            const newLink = { title: bookmarkTitle, url: bookmarkURL, id: nanoid() };
+            
             const existingFolderIndex = allBookmarks.findIndex(f => f.name.toLowerCase() === folderName.toLowerCase());
             if (existingFolderIndex !== -1) {
                 // Add link to existing folder
                 allBookmarks[existingFolderIndex].links.push(newLink);
             } else {
                 // Create new folder
-                const newFolder = { name: folderName, icon: iconData, links: [newLink], id: nanoid() }; // Добавлен ID для папки
+                const newFolder = { name: folderName, icon: iconData, links: [newLink], id: nanoid() }; 
                 allBookmarks.push(newFolder);
             }
 
             saveBookmarksToLocalStorage();
             renderAllBookmarks(); // Re-render with new data
             createFolderForm.reset();
-            closeModal(); // Закрытие основной модалки создания
+            closeModal(); 
         });
     } else {
         console.warn('Create folder form .new-folder-form not found. Submission will not work.');
@@ -242,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // Search functionality for folders
-    if (foldersSearchInput) { // Проверка
+    if (foldersSearchInput) { 
         foldersSearchInput.addEventListener('input', (event) => {
             const searchTerm = event.target.value;
             renderAllBookmarks(searchTerm);
@@ -263,7 +260,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window._dumpFolderForm = dumpFormElements;
     window.renderAllBookmarks = renderAllBookmarks; // Теперь это глобальная функция
     
-    // Слушатель для обновления закладок при внешних изменениях
     window.addEventListener('bookmarksUpdated', () => {
         renderAllBookmarks();
     });

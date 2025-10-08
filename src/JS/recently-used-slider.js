@@ -1,4 +1,3 @@
-// Импорт основного функционала PNotify из @pnotify/core
 import { alert, notice, info, success, error } from '@pnotify/core';
 import i18next from "i18next";
 
@@ -7,13 +6,6 @@ import  dashboardTest from "../images/dashboard-test.svg";
 import  plusImg from "../images/plus.svg";
 
 import '@pnotify/core/dist/PNotify.css'; 
-// import '@pnotify/brighttheme/dist/PNotifyBrightTheme.css';
-
-
-// import * as PNotifyButtons from '@pnotify/buttons';
-// import '@pnotify/buttons/dist/PNotifyButtons.css';
-// import { defaultModules } from '@pnotify/core';
-// defaultModules.set(PNotifyButtons, {});
 
 
 const userData = JSON.parse(localStorage.getItem("dashMarkBookmarks")) || [];
@@ -78,10 +70,8 @@ let dataToRender = [];
   }
 
   if (userData.length <= 4) {
-    // если мало данных — показываем все
     dataToRender = userData;
   } else {
-    // если много — берём последние 6
     dataToRender = userData.slice(-5);
   }
 

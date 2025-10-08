@@ -1,10 +1,9 @@
-import { closeModal as closeMainModal } from "./bookmarks/modals"; // Для закрытия основной модалки
-import folderIMG from '../images/folder.svg'; // Дефолтная иконка папки
-import defaultBookmarkFavicon from '../images/dashboard-test.svg'; // Дефолтный фавикон ссылки
+import { closeModal as closeMainModal } from "./bookmarks/modals"; 
+import folderIMG from '../images/folder.svg'; 
+import defaultBookmarkFavicon from '../images/dashboard-test.svg';
 import editImg from '../images/edit.svg';
 import deleteImg from '../images/delete.svg';
 
-// --- Утилиты (пока оставим здесь, но лучше вынести) ---
 function getFaviconUrl(url) {
     try {
         const domain = new URL(url).hostname;
@@ -22,32 +21,25 @@ function escapeHtml(str = '') {
         .replaceAll('"', '&quot;')
         .replaceAll("'", '&#039;');
 }
-// --- Конец утилит ---
 
 document.addEventListener('DOMContentLoaded', () => {
     const mainContent = document.querySelector('.main-content');
-    const folderDetailsBackdrop = document.querySelector('.js-folder-details-backdrop'); // Добавлен JS-префикс для унификации
+    const folderDetailsBackdrop = document.querySelector('.js-folder-details-backdrop'); 
     const folderDetailsModal = document.querySelector('.folder-details-modal');
     const folderDetailsTitle = document.querySelector('.folder-details-title');
     const folderNameEditInput = document.querySelector('.folder-name-edit-input');
-    const folderLinksList = document.querySelector('.folder-links-list'); // UL для ссылок в модалке
+    const folderLinksList = document.querySelector('.folder-links-list'); 
     const deleteFolderBtn = document.querySelector('.delete-folder-btn');
     const saveFolderNameBtn = document.querySelector('.save-folder-name-btn');
     const closeDetailsModalBtn = document.querySelector('.close-details-modal-btn');
 
-    let currentFolderId = null; // Использование ID вместо индекса более надежно
+    let currentFolderId = null; 
     let allBookmarks = JSON.parse(localStorage.getItem('dashMarkBookmarks')) || [];
 
     // Utility: save bookmarks to localStorage
     function saveBookmarksToLocalStorage() {
         localStorage.setItem('dashMarkBookmarks', JSON.stringify(allBookmarks));
     }
-
-    // Utility: add to history (импортируется из history.js или дублируется)
-    // Так как addToHistory уже есть в history.js и этот файл (folder-details-modal.js)
-    // не должен быть ответственен за добавление в историю напрямую,
-    // а только за рендеринг ссылок с правильными атрибутами для глобального слушателя.
-    // Оставляем это на глобальный слушатель в history.js, который теперь будет видеть атрибуты.
 
     // Render links inside the folder details modal
     function renderFolderLinks(folder) {
@@ -92,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Open folder details modal
-    function openFolderDetailsModal(folderId) { // Принимаем ID, а не имя
+    function openFolderDetailsModal(folderId) { 
         allBookmarks = JSON.parse(localStorage.getItem('dashMarkBookmarks')) || [];
         const folder = allBookmarks.find(f => String(f.id) === String(folderId));
 
@@ -101,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        currentFolderId = folder.id; // Сохраняем ID текущей папки
+        currentFolderId = folder.id; 
         folderDetailsTitle.textContent = escapeHtml(folder.name);
         folderNameEditInput.value = escapeHtml(folder.name);
         renderFolderLinks(folder);
@@ -110,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
             folderDetailsBackdrop.classList.add('is-open');
         }
         if (mainContent) {
-            mainContent.classList.add('has-modal-open'); // Добавляем класс для затемнения основного контента
+            mainContent.classList.add('has-modal-open'); 
         }
     }
 
@@ -120,22 +112,19 @@ document.addEventListener('DOMContentLoaded', () => {
             folderDetailsBackdrop.classList.remove('is-open');
         }
         if (mainContent) {
-            mainContent.classList.remove('has-modal-open'); // Удаляем класс
+            mainContent.classList.remove('has-modal-open'); 
         }
-        currentFolderId = null; // Сбрасываем ID
-        // Перезагружаем все закладки на главной странице, чтобы обновить их
+        currentFolderId = null;
         window.dispatchEvent(new Event('bookmarksUpdated'));
     }
 
     // Event listener for opening folder details
-    // Должен быть на родительском элементе, который содержит папки, например .folders-grid
-    // Если .folders-grid рендерится render-bookmarks.js, то он будет иметь data-folder-id
     const foldersGrid = document.querySelector('.folders-grid');
     if (foldersGrid) {
         foldersGrid.addEventListener('click', (event) => {
             const folderCard = event.target.closest('.folder-card');
-            if (folderCard && !event.target.closest('.folder-actions-btn')) { // Исключаем клики по кнопкам действий внутри карточки
-                const folderId = folderCard.dataset.folderId; // Получаем ID
+            if (folderCard && !event.target.closest('.folder-actions-btn')) { 
+                const folderId = folderCard.dataset.folderId; 
                 if (folderId) {
                     openFolderDetailsModal(folderId);
                 } else {
@@ -178,9 +167,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const folder = allBookmarks[folderIndex];
             if (confirm(`Are you sure you want to delete the folder "${folder.name}" and all its links?`)) {
                 allBookmarks.splice(folderIndex, 1);
-                saveBookmarksToLocalStorage(); // Используем унифицированную функцию
+                saveBookmarksToLocalStorage(); 
                 closeFolderDetailsModal();
-                // location.reload(); // Обычно не нужно, если event 'bookmarksUpdated' обрабатывается
             }
         });
     } else {
@@ -219,15 +207,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             allBookmarks[folderIndex].name = newName;
-            saveBookmarksToLocalStorage(); // Используем унифицированную функцию
+            saveBookmarksToLocalStorage(); 
             folderDetailsTitle.textContent = escapeHtml(newName);
             alert('Folder name updated successfully!');
 
             window.dispatchEvent(new Event('bookmarksUpdated'));
             closeFolderDetailsModal();
-            // location.reload(); // Обычно не нужно, если event 'bookmarksUpdated' обрабатывается
-
-            // Обновление карточки на главной странице будет через 'bookmarksUpdated'
         });
     } else {
         console.warn('Save folder name button .save-folder-name-btn not found.');
@@ -255,19 +240,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (confirm(`Are you sure you want to delete the link "${linkTitle}"?`)) {
                     folder.links.splice(linkIndex, 1);
                     saveBookmarksToLocalStorage();
-                    renderFolderLinks(folder); // Перерендеринг списка ссылок в модалке
-                    window.dispatchEvent(new Event('bookmarksUpdated')); // Обновить основной грид
+                    renderFolderLinks(folder); 
+                    window.dispatchEvent(new Event('bookmarksUpdated'));
                 }
             } else if (editBtn) {
                 const linkToEdit = folder.links[linkIndex];
                 const newLinkName = prompt("Enter a new link title: ", linkToEdit.title);
 
-                if (newLinkName !== null && newLinkName.trim() !== "") { // Проверка на null (отмена) и пустую строку
+                if (newLinkName !== null && newLinkName.trim() !== "") { 
                     linkToEdit.title = newLinkName.trim();
                     saveBookmarksToLocalStorage();
-                    renderFolderLinks(folder); // Перерендеринг списка ссылок в модалке
+                    renderFolderLinks(folder); 
                     alert("Link title updated!");
-                    window.dispatchEvent(new Event('bookmarksUpdated')); // Обновить основной грид
+                    window.dispatchEvent(new Event('bookmarksUpdated')); 
                 }
             }
         });
@@ -279,16 +264,13 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('bookmarksUpdated', () => {
         allBookmarks = JSON.parse(localStorage.getItem('dashMarkBookmarks')) || [];
 
-        // Если модалка папки открыта, перерендерим её содержимое, если папка всё ещё существует
         if (folderDetailsBackdrop?.classList.contains('is-open') && currentFolderId) {
             const currentFolder = allBookmarks.find(f => String(f.id) === String(currentFolderId));
             if (currentFolder) {
                 renderFolderLinks(currentFolder);
             } else {
-                // Если папка была удалена, закрываем модалку
                 closeFolderDetailsModal();
             }
         }
-        // render-bookmarks.js будет обрабатывать renderAllBookmarks() сам
     });
 });
