@@ -23,7 +23,35 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
-    />
+    />   
+    <link rel="stylesheet" href="./src/css/beta_2.0.0.css">
+        <script>
+        (function() {
+            const THEME_STORAGE_KEY = 'userThemePreference'; // Используйте ТОТ ЖЕ КЛЮЧ
+            const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+            let themeToApply = 'light';
+
+            if (savedTheme === 'dark') {
+                themeToApply = 'dark';
+            } else if (savedTheme === 'system') {
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    themeToApply = 'dark';
+                } else {
+                    themeToApply = 'light';
+                }
+            }
+
+            if (themeToApply === 'dark') {
+                document.documentElement.classList.add('force-dark-theme'); // Применяем к <html>
+            }
+            // Можно также добавить класс для светлой темы, если вам нужно явно управлять ею
+            // else {
+            //     document.documentElement.classList.add('force-light-theme');
+            // }
+
+            // Сохранять в localStorage здесь не нужно, т.к. значение уже там (или system)
+        })();
+        </script>
   </head>
   <body>
     <div class="app-container">
